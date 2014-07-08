@@ -3,9 +3,6 @@ var Backbone = require('backbone');
 var _        = require('lodash');
 var History  = require('history');
 
-var ui       = require('./ui');
-
-
 module.exports.MovieList = Backbone.View.extend({
   el: '.movie-list',
   initialize: function() {
@@ -168,10 +165,18 @@ module.exports.Header = Backbone.View.extend({
   showMenu: function(e) {
     e.preventDefault();
     var $sidebar = $('.sidebar');
+    var $overlay = $('.overlay');
+
     if ($sidebar.hasClass('is-visible')) {
       $sidebar.removeClass('is-visible');
+      $overlay.off('click', function(){
+        $sidebar.removeClass('is-visible');
+      });
     } else {
       $sidebar.addClass('is-visible');
+      $overlay.on('click', function(){
+        $sidebar.removeClass('is-visible');
+      });
     }
   }
 });

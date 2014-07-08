@@ -9,41 +9,61 @@ Model        = require('./models');
 Collection   = require('./collections');
 View         = require('./views');
 
-// UI
-UI           = require('./ui');
-
-var CATEGORIES = [
-    {name: 'in-theatres', title: 'In Theatres'},
-    {name: 'box-office', title: 'Box Office'},
-    {name: 'new-releases', title: 'New Releases'},
-    {name: 'top-rentals', title: 'Top Rentals'}
-  ];
 
 $(function(){
-  var initial_route = window.location.pathname.replace('/', '');
-  var initial_category = _.where(CATEGORIES, {name: initial_route})[0];
-
-  var movie_categories = new Collection.Categories(CATEGORIES);
-  var category_list = new View.CategoryList({
-    collection: movie_categories
-  });
-  var header = new View.Header();
-
-  category_list.getMovies(initial_category.name, initial_category.title);
-  isUserOnline();
-  UI.init();
+  Flix.init();
 });
 
-// polls to see if user is offline and displays offline notification
-var isUserOnline = function() {
-  if (navigator.onLine) {
-    console.log('online')
-    $('.offline').removeClass('is-visible')
-  } else {
-    console.log('offline')
-    $('.offline').addClass('is-visible');
+Flix = new function(){
+  'use strict';
+  var self = this;
+  var CATEGORIES = [
+      {name: 'in-theatres', title: 'In Theatres'},
+      {name: 'box-office', title: 'Box Office'},
+      {name: 'new-releases', title: 'New Releases'},
+      {name: 'top-rentals', title: 'Top Rentals'}
+    ];
+
+  this.init = function(){
+    self.initLayout();
+    self.isUserOnline();
   }
-  setTimeout(function(){
-    isUserOnline();
-  }, 5000)
+
+  this.initLayout = function() {
+    var movie_categories = new Collection.Categories(CATEGORIES);
+    var category_list = new View.CategoryList({
+      collection: movie_categories
+    });
+    var header = new View.Header();
+    initialRoute(category_list);
+  }
+
+  // polls to see if user is offline and displays offline notification
+  this.isUserOnline = function() {
+    if (navigator.onLine) {
+      self.config.isOnline = true;
+      $('.offline').removeClass('is-visible');
+    } else {
+      self.config.isOnline = false;
+      $('.offline').addClass('is-visible');
+    }
+    console.log(self.config.isOnline);
+    setTimeout(function(){
+      self.isUserOnline();
+    }, 3000)
+  }
+
+  // Global Variables
+  this.config = {
+    isOnline: true
+  };
+
+  // Private Functions
+  var initialRoute = function(category_list) {
+    var initial_route = window.location.pathname.replace('/', '');
+    var initial_category = _.where(CATEGORIES, {name: initial_route})[0] || CATEGORIES[0];
+
+    category_list.getMovies(initial_category.name, initial_category.title);
+  }
 }
+
