@@ -1,0 +1,6 @@
+.DS_Store
+.nodemonignore
+temp/
+node_modules/
+config/local.js
+test.js
