@@ -1,0 +1,47 @@
+// libraries
+var express = require('express');
+var app     = express();
+var nconf   = require('nconf');
+
+var controllers = require('./controllers');
+
+
+// Run initializers
+require('./lib/init-all');
+
+// Configuration
+app.configure(function(){
+  // Middleware
+  app.use(function(req, res, next){
+    res.locals.url = 'http://' + req.headers.host;
+    next();
+  });
+  app.use('/', express.static(__dirname + '/public/'));
+  app.set('view engine', 'jade');
+  app.use(express.json());
+  app.use(express.urlencoded());
+  app.use(express.cookieParser()); // parse cookies
+  app.use(app.router);
+});
+
+// Routes
+app.get('/', function(req, res){
+  res.render('index');
+});
+
+app.get('/data/in-theatres', controllers.in_theatres);
+app.get('/data/box-office', controllers.box_office);
+app.get('/data/new-releases', controllers.new_releases);
+app.get('/data/top-rentals', controllers.top_rentals);
+
+app.get('*', function(req, res){
+  res.render('index');
+});
+
+var port = nconf.get('PORT') || 8888;
+app.listen(port);
+console.log('\n-----> Running Flix on port ' + port);
+
+module.exports.app = app;
+
+// require('./test');
