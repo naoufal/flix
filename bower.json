@@ -1,0 +1,25 @@
+{
+  "name": "flix",
+  "version": "0.1.0",
+  "authors": [
+    "Naoufal Kadhom <naoufalkadhom@gmail.com>"
+  ],
+  "description": "",
+  "main": "app.js",
+  "keywords": "",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bourbon": "~3.1.8",
+    "foundation": "~5.1.1",
+    "neat": "~1.6.0",
+    "history.js": "~1.8.0"
+  }
+}
