@@ -1,10 +1,8 @@
 var $        = require('jquery');
 var Backbone = require('backbone');
 var _        = require('lodash');
-var _History  = require('history');
+var History  = require('history');
 Backbone.$   = $;
-
-console.log(_History)
 
 // Backbone
 Model        = require('./models');
@@ -14,23 +12,26 @@ View         = require('./views');
 // UI
 UI           = require('./ui');
 
-$(function(){
-  UI.init();
-  // this can probably be setup another way
-  var movie_categories = new Collection.Categories([
-      {name: 'in-theatres', title: 'In Theatres'},
-      {name: 'box-office', title: 'Box Office'},
-      {name: 'new-releases', title: 'New Releases'},
-      {name: 'top-rentals', title: 'Top Rentals'}
-    ]);
+var CATEGORIES = [
+    {name: 'in-theatres', title: 'In Theatres'},
+    {name: 'box-office', title: 'Box Office'},
+    {name: 'new-releases', title: 'New Releases'},
+    {name: 'top-rentals', title: 'Top Rentals'}
+  ];
 
+$(function(){
+  var initial_route = window.location.pathname.replace('/', '');
+  var initial_category = _.where(CATEGORIES, {name: initial_route})[0];
+
+  var movie_categories = new Collection.Categories(CATEGORIES);
   var category_list = new View.CategoryList({
     collection: movie_categories
   });
+  var header = new View.Header();
 
-  var header = new View.Header()
-
+  category_list.getMovies(initial_category.name, initial_category.title);
   isUserOnline();
+  UI.init();
 });
 
 // polls to see if user is offline and displays offline notification

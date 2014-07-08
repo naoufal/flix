@@ -1,6 +1,7 @@
 var $        = require('jquery');
 var Backbone = require('backbone');
 var _        = require('lodash');
+var History  = require('history');
 
 var ui       = require('./ui');
 
@@ -61,7 +62,6 @@ module.exports.CategoryList = Backbone.View.extend({
     this.collection.bind('reset', this.render);
 
     // this can be replaced with current url (once push state is setup)
-    this.getMovies('in-theatres');
   },
   render: function(){
     var self = this;
@@ -75,8 +75,8 @@ module.exports.CategoryList = Backbone.View.extend({
   hideMenu: function(){
     $('.sidebar').removeClass('is-visible');
   },
-  getMovies: function(category){
-    var cache_key = category.replace('-', '_');
+  getMovies: function(category_name, category_title){
+    var cache_key = category_name.replace('-', '_');
     var cache_response = localStorage.getItem(cache_key);
 
     // if cache response, parse it.
@@ -84,15 +84,16 @@ module.exports.CategoryList = Backbone.View.extend({
       // console.log('has cache');
       cache_response = JSON.parse(cache_response);
 
-      this.isTimestampExpired(cache_response, category);
+      this.isTimestampExpired(cache_response, category_name);
     } else {
       // console.log('no cached');
-      var movie_collection = new Collection.Movies({category: category});
+      var movie_collection = new Collection.Movies({category: category_name});
       var movie_list = new View.MovieList({
         collection: movie_collection
       });
     }
 
+    $('#header .title').html(category_title)
     this.hideMenu();
   },
   isTimestampExpired: function(cache_response, category) {
@@ -143,8 +144,11 @@ module.exports.CategoryItem = Backbone.View.extend({
         category.set('selected', false);
       }
     });
-    this.parent.getMovies(this.model.get('name'));
-    $('#header .title').html(this.model.get('title'))
+    this.parent.getMovies(this.model.get('name'), this.model.get('title'));
+    this.setPushState();
+  },
+  setPushState: function(){
+    History.pushState(null, this.model.get('title'), this.model.get('name'));
   }
 });
 
