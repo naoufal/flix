@@ -1,0 +1,1410 @@
+{
+  "movies": [
+    {
+      "id": "771269858",
+      "title": "Transformers: Age of Extinction",
+      "year": 2014,
+      "mpaa_rating": "PG-13",
+      "runtime": 157,
+      "critics_consensus": "",
+      "release_dates": {
+        "theater": "2014-06-27"
+      },
+      "ratings": {
+        "critics_rating": "Rotten",
+        "critics_score": 17,
+        "audience_rating": "Spilled",
+        "audience_score": 59
+      },
+      "synopsis": "TRANSFORMERS: AGE OF EXTINCTION begins after an epic battle left a great city torn, but with the world saved. As humanity picks up the pieces, a shadowy group reveals itself in an attempt to control the direction of history...while an ancient, powerful new menace sets Earth in its crosshairs. With help from a new cast of humans (led by Mark Wahlberg), Optimus Prime and the Autobots rise to meet their most fearsome challenge yet. In an incredible adventure, they are swept up in a war of good and evil, ultimately leading to a climactic battle across the world. (C) Paramount",
+      "posters": {
+        "thumbnail": "http://content9.flixster.com/movie/11/17/81/11178175_tmb.png",
+        "profile": "http://content9.flixster.com/movie/11/17/81/11178175_tmb.png",
+        "detailed": "http://content9.flixster.com/movie/11/17/81/11178175_tmb.png",
+        "original": "http://content9.flixster.com/movie/11/17/81/11178175_tmb.png"
+      },
+      "abridged_cast": [
+        {
+          "name": "Mark Wahlberg",
+          "id": "162653181",
+          "characters": [
+            "Cade Yeager"
+          ]
+        },
+        {
+          "name": "Jack Reynor",
+          "id": "771403543",
+          "characters": [
+            "Shane Dyson"
+          ]
+        },
+        {
+          "name": "Nicola Peltz",
+          "id": "770833458",
+          "characters": [
+            "Tessa Yeager"
+          ]
+        },
+        {
+          "name": "Stanley Tucci",
+          "id": "162661152",
+          "characters": [
+            "Joshua Joyce"
+          ]
+        },
+        {
+          "name": "Abigail Klein",
+          "id": "771407347",
+          "characters": [
+            "Joshua's Assistant"
+          ]
+        }
+      ],
+      "alternate_ids": {
+        "imdb": "2109248"
+      },
+      "links": {
+        "self": "http://api.rottentomatoes.com/api/public/v1.0/movies/771269858.json",
+        "alternate": "http://www.rottentomatoes.com/m/transformers_age_of_extinction/",
+        "cast": "http://api.rottentomatoes.com/api/public/v1.0/movies/771269858/cast.json",
+        "reviews": "http://api.rottentomatoes.com/api/public/v1.0/movies/771269858/reviews.json",
+        "similar": "http://api.rottentomatoes.com/api/public/v1.0/movies/771269858/similar.json"
+      }
+    },
+    {
+      "id": "771355226",
+      "title": "22 Jump Street",
+      "year": 2014,
+      "mpaa_rating": "R",
+      "runtime": 110,
+      "critics_consensus": "",
+      "release_dates": {
+        "theater": "2014-06-13"
+      },
+      "ratings": {
+        "critics_rating": "Certified Fresh",
+        "critics_score": 85,
+        "audience_rating": "Upright",
+        "audience_score": 86
+      },
+      "synopsis": "After making their way through high school (twice), big changes are in store for officers Schmidt (Jonah Hill) and Jenko (Channing Tatum) when they go deep undercover at a local college. But when Jenko meets a kindred spirit on the football team, and Schmidt infiltrates the bohemian art major scene, they begin to question their partnership. Now they don't have to just crack the case - they have to figure out if they can have a mature relationship. If these two overgrown adolescents can grow from freshmen into real men, college might be the best thing that ever happened to them. (c) Sony",
+      "posters": {
+        "thumbnail": "http://content8.flixster.com/movie/11/17/85/11178534_tmb.jpg",
+        "profile": "http://content8.flixster.com/movie/11/17/85/11178534_tmb.jpg",
+        "detailed": "http://content8.flixster.com/movie/11/17/85/11178534_tmb.jpg",
+        "original": "http://content8.flixster.com/movie/11/17/85/11178534_tmb.jpg"
+      },
+      "abridged_cast": [
+        {
+          "name": "Jonah Hill",
+          "id": "326297850",
+          "characters": [
+            "Schmidt"
+          ]
+        },
+        {
+          "name": "Channing Tatum",
+          "id": "162661835",
+          "characters": [
+            "Jenko"
+          ]
+        },
+        {
+          "name": "Peter Stormare",
+          "id": "162725032",
+          "characters": [
+            "The Ghost"
+          ]
+        },
+        {
+          "name": "Ice Cube",
+          "id": "162652332",
+          "characters": [
+            "Captain Dickson"
+          ]
+        },
+        {
+          "name": "Amber Stevens",
+          "id": "770793901",
+          "characters": [
+            "Maya"
+          ]
+        }
+      ],
+      "alternate_ids": {
+        "imdb": "2294449"
+      },
+      "links": {
+        "self": "http://api.rottentomatoes.com/api/public/v1.0/movies/771355226.json",
+        "alternate": "http://www.rottentomatoes.com/m/22_jump_street/",
+        "cast": "http://api.rottentomatoes.com/api/public/v1.0/movies/771355226/cast.json",
+        "reviews": "http://api.rottentomatoes.com/api/public/v1.0/movies/771355226/reviews.json",
+        "similar": "http://api.rottentomatoes.com/api/public/v1.0/movies/771355226/similar.json"
+      }
+    },
+    {
+      "id": "771040382",
+      "title": "How to Train Your Dragon 2",
+      "year": 2014,
+      "mpaa_rating": "PG",
+      "runtime": 105,
+      "critics_consensus": "",
+      "release_dates": {
+        "theater": "2014-06-13",
+        "dvd": "2014-12-11"
+      },
+      "ratings": {
+        "critics_rating": "Certified Fresh",
+        "critics_score": 92,
+        "audience_rating": "Upright",
+        "audience_score": 93
+      },
+      "synopsis": "DreamWorks Animation returns to the world of dragons and Vikings in this sequel to their successful 2010 outing How to Train Your Dragon. The original film followed the exploits of a Viking chief's son, who must capture a dragon in order to mark his passage into manhood and prove his worthiness to the tribe. ~ Jeremy Wheeler, Rovi",
+      "posters": {
+        "thumbnail": "http://content6.flixster.com/movie/11/17/84/11178428_tmb.jpg",
+        "profile": "http://content6.flixster.com/movie/11/17/84/11178428_tmb.jpg",
+        "detailed": "http://content6.flixster.com/movie/11/17/84/11178428_tmb.jpg",
+        "original": "http://content6.flixster.com/movie/11/17/84/11178428_tmb.jpg"
+      },
+      "abridged_cast": [
+        {
+          "name": "Jay Baruchel",
+          "id": "259260120",
+          "characters": [
+            "Hiccup"
+          ]
+        },
+        {
+          "name": "Gerard Butler",
+          "id": "162659102",
+          "characters": [
+            "Stoick"
+          ]
+        },
+        {
+          "name": "America Ferrera",
+          "id": "162652611",
+          "characters": [
+            "Astrid"
+          ]
+        },
+        {
+          "name": "Jonah Hill",
+          "id": "326297850",
+          "characters": [
+            "Snotlout"
+          ]
+        },
+        {
+          "name": "Christopher Mintz-Plasse",
+          "id": "770679139",
+          "characters": [
+            "Fishlegs"
+          ]
+        }
+      ],
+      "alternate_ids": {
+        "imdb": "1646971"
+      },
+      "links": {
+        "self": "http://api.rottentomatoes.com/api/public/v1.0/movies/771040382.json",
+        "alternate": "http://www.rottentomatoes.com/m/how_to_train_your_dragon_2/",
+        "cast": "http://api.rottentomatoes.com/api/public/v1.0/movies/771040382/cast.json",
+        "reviews": "http://api.rottentomatoes.com/api/public/v1.0/movies/771040382/reviews.json",
+        "similar": "http://api.rottentomatoes.com/api/public/v1.0/movies/771040382/similar.json"
+      }
+    },
+    {
+      "id": "771358910",
+      "title": "Think Like a Man Too",
+      "year": 2014,
+      "mpaa_rating": "PG-13",
+      "runtime": 106,
+      "critics_consensus": "",
+      "release_dates": {
+        "theater": "2014-06-20"
+      },
+      "ratings": {
+        "critics_rating": "Rotten",
+        "critics_score": 24,
+        "audience_rating": "Upright",
+        "audience_score": 71
+      },
+      "synopsis": "In the highly anticipated sequel, which was inspired by Steve Harvey's best-selling book Act Like a Lady, Think Like A Man, all the couples are back for a wedding in Las Vegas. But plans for a romantic weekend go awry when their various misadventures get them into some compromising situations that threaten to derail the big event. (c) Sony",
+      "posters": {
+        "thumbnail": "http://content9.flixster.com/movie/11/17/63/11176335_tmb.jpg",
+        "profile": "http://content9.flixster.com/movie/11/17/63/11176335_tmb.jpg",
+        "detailed": "http://content9.flixster.com/movie/11/17/63/11176335_tmb.jpg",
+        "original": "http://content9.flixster.com/movie/11/17/63/11176335_tmb.jpg"
+      },
+      "abridged_cast": [
+        {
+          "name": "Adam Brody",
+          "id": "162652628",
+          "characters": [
+            "Isaac"
+          ]
+        },
+        {
+          "name": "Michael Ealy",
+          "id": "162713769",
+          "characters": [
+            "Dominic"
+          ]
+        },
+        {
+          "name": "Jerry Ferrara",
+          "id": "364659706",
+          "characters": [
+            "Jeremy"
+          ]
+        },
+        {
+          "name": "Meagan Good",
+          "id": "162654101",
+          "characters": [
+            "Mya"
+          ]
+        },
+        {
+          "name": "Regina Hall",
+          "id": "162667054",
+          "characters": [
+            "Candace"
+          ]
+        }
+      ],
+      "alternate_ids": {
+        "imdb": "2239832"
+      },
+      "links": {
+        "self": "http://api.rottentomatoes.com/api/public/v1.0/movies/771358910.json",
+        "alternate": "http://www.rottentomatoes.com/m/think_like_a_man_too/",
+        "cast": "http://api.rottentomatoes.com/api/public/v1.0/movies/771358910/cast.json",
+        "reviews": "http://api.rottentomatoes.com/api/public/v1.0/movies/771358910/reviews.json",
+        "similar": "http://api.rottentomatoes.com/api/public/v1.0/movies/771358910/similar.json"
+      }
+    },
+    {
+      "id": "771304593",
+      "title": "Maleficent",
+      "year": 2014,
+      "mpaa_rating": "PG",
+      "runtime": 97,
+      "critics_consensus": "",
+      "release_dates": {
+        "theater": "2014-05-30"
+      },
+      "ratings": {
+        "critics_rating": "Rotten",
+        "critics_score": 50,
+        "audience_rating": "Upright",
+        "audience_score": 75
+      },
+      "synopsis": "\"Maleficent\" explores the untold story of Disney's most iconic villain from the classic \"Sleeping Beauty\" and the elements of her betrayal that ultimately turn her pure heart to stone. Driven by revenge and a fierce desire to protect the moors over which she presides, Maleficent cruelly places an irrevocable curse upon the human king's newborn infant Aurora. As the child grows, Aurora is caught in the middle of the seething conflict between the forest kingdom she has grown to love and the human kingdom that holds her legacy. Maleficent realizes that Aurora may hold the key to peace in the land and is forced to take drastic actions that will change both worlds forever. (c) Walt Disney Pictures",
+      "posters": {
+        "thumbnail": "http://content8.flixster.com/movie/11/17/67/11176742_tmb.jpg",
+        "profile": "http://content8.flixster.com/movie/11/17/67/11176742_tmb.jpg",
+        "detailed": "http://content8.flixster.com/movie/11/17/67/11176742_tmb.jpg",
+        "original": "http://content8.flixster.com/movie/11/17/67/11176742_tmb.jpg"
+      },
+      "abridged_cast": [
+        {
+          "name": "Angelina Jolie",
+          "id": "162652626",
+          "characters": [
+            "Maleficent"
+          ]
+        },
+        {
+          "name": "Sharlto Copley",
+          "id": "770674319",
+          "characters": [
+            "Stefan"
+          ]
+        },
+        {
+          "name": "Elle Fanning",
+          "id": "528361349",
+          "characters": [
+            "Princess Aurora"
+          ]
+        },
+        {
+          "name": "Sam Riley",
+          "id": "770673828",
+          "characters": [
+            "Diaval"
+          ]
+        },
+        {
+          "name": "Imelda Staunton",
+          "id": "162693364",
+          "characters": [
+            "Knotgrass"
+          ]
+        }
+      ],
+      "alternate_ids": {
+        "imdb": "1587310"
+      },
+      "links": {
+        "self": "http://api.rottentomatoes.com/api/public/v1.0/movies/771304593.json",
+        "alternate": "http://www.rottentomatoes.com/m/maleficent_2014/",
+        "cast": "http://api.rottentomatoes.com/api/public/v1.0/movies/771304593/cast.json",
+        "reviews": "http://api.rottentomatoes.com/api/public/v1.0/movies/771304593/reviews.json",
+        "similar": "http://api.rottentomatoes.com/api/public/v1.0/movies/771304593/similar.json"
+      }
+    },
+    {
+      "id": "771361033",
+      "title": "Jersey Boys",
+      "year": 2014,
+      "mpaa_rating": "R",
+      "runtime": 134,
+      "critics_consensus": "",
+      "release_dates": {
+        "theater": "2014-06-20"
+      },
+      "ratings": {
+        "critics_rating": "Rotten",
+        "critics_score": 54,
+        "audience_rating": "Upright",
+        "audience_score": 70
+      },
+      "synopsis": "Clint Eastwood's big screen version of the Tony Award-winning musical tells the story of the four young men from the wrong side of the tracks in New Jersey who came together to form the iconic `60s rock group The Four Seasons. Their trials and triumphs are accompanied by the hit songs that influenced a generation, and are now being embraced by a new generation of fans through the stage musical.(c) Warner Bros.",
+      "posters": {
+        "thumbnail": "http://content6.flixster.com/movie/11/17/75/11177548_tmb.jpg",
+        "profile": "http://content6.flixster.com/movie/11/17/75/11177548_tmb.jpg",
+        "detailed": "http://content6.flixster.com/movie/11/17/75/11177548_tmb.jpg",
+        "original": "http://content6.flixster.com/movie/11/17/75/11177548_tmb.jpg"
+      },
+      "abridged_cast": [
+        {
+          "name": "John Lloyd Young",
+          "id": "770849656",
+          "characters": [
+            "Frankie Valli"
+          ]
+        },
+        {
+          "name": "Erich Bergen",
+          "id": "771442741",
+          "characters": [
+            "Bob Gaudio"
+          ]
+        },
+        {
+          "name": "Michael Lomenda",
+          "id": "771494359",
+          "characters": [
+            "Nick Massi"
+          ]
+        },
+        {
+          "name": "Vincent Piazza",
+          "id": "528367113",
+          "characters": [
+            "Tommy DeVito"
+          ]
+        },
+        {
+          "name": "Christopher Walken",
+          "id": "162652837",
+          "characters": [
+            "Angelo \"Gyp\" DeCarlo"
+          ]
+        }
+      ],
+      "alternate_ids": {
+        "imdb": "1742044"
+      },
+      "links": {
+        "self": "http://api.rottentomatoes.com/api/public/v1.0/movies/771361033.json",
+        "alternate": "http://www.rottentomatoes.com/m/jersey_boys/",
+        "cast": "http://api.rottentomatoes.com/api/public/v1.0/movies/771361033/cast.json",
+        "reviews": "http://api.rottentomatoes.com/api/public/v1.0/movies/771361033/reviews.json",
+        "similar": "http://api.rottentomatoes.com/api/public/v1.0/movies/771361033/similar.json"
+      }
+    },
+    {
+      "id": "771317257",
+      "title": "Edge of Tomorrow",
+      "year": 2014,
+      "mpaa_rating": "PG-13",
+      "runtime": 113,
+      "critics_consensus": "",
+      "release_dates": {
+        "theater": "2014-06-06"
+      },
+      "ratings": {
+        "critics_rating": "Certified Fresh",
+        "critics_score": 90,
+        "audience_rating": "Upright",
+        "audience_score": 92
+      },
+      "synopsis": "The epic action of \"Edge of Tomorrow\" unfolds in a near future in which an alien race has hit the Earth in an unrelenting assault, unbeatable by any military unit in the world. Major William Cage (Tom Cruise) is an officer who has never seen a day of combat when he is unceremoniously dropped into what amounts to a suicide mission. Killed within minutes, Cage now finds himself inexplicably thrown into a time loop-forcing him to live out the same brutal combat over and over, fighting and dying again...and again. But with each battle, Cage becomes able to engage the adversaries with increasing skill, alongside Special Forces warrior Rita Vrataski (Emily Blunt). And, as Cage and Rita take the fight to the aliens, each repeated encounter gets them one step closer to defeating the enemy.(C) Warner Bros",
+      "posters": {
+        "thumbnail": "http://content8.flixster.com/movie/11/17/87/11178706_tmb.jpg",
+        "profile": "http://content8.flixster.com/movie/11/17/87/11178706_tmb.jpg",
+        "detailed": "http://content8.flixster.com/movie/11/17/87/11178706_tmb.jpg",
+        "original": "http://content8.flixster.com/movie/11/17/87/11178706_tmb.jpg"
+      },
+      "abridged_cast": [
+        {
+          "name": "Tom Cruise",
+          "id": "162652763",
+          "characters": [
+            "Major William Cage"
+          ]
+        },
+        {
+          "name": "Emily Blunt",
+          "id": "162685827",
+          "characters": [
+            "Rita Vrataski"
+          ]
+        },
+        {
+          "name": "Bill Paxton",
+          "id": "162654226",
+          "characters": [
+            "Master Sergeant Farell"
+          ]
+        },
+        {
+          "name": "Jonas Armstrong",
+          "id": "770796908",
+          "characters": [
+            "Skinner"
+          ]
+        },
+        {
+          "name": "Tony Way",
+          "id": "770853907",
+          "characters": [
+            "Kimmel"
+          ]
+        }
+      ],
+      "alternate_ids": {
+        "imdb": "1631867"
+      },
+      "links": {
+        "self": "http://api.rottentomatoes.com/api/public/v1.0/movies/771317257.json",
+        "alternate": "http://www.rottentomatoes.com/m/edge_of_tomorrow/",
+        "cast": "http://api.rottentomatoes.com/api/public/v1.0/movies/771317257/cast.json",
+        "reviews": "http://api.rottentomatoes.com/api/public/v1.0/movies/771317257/reviews.json",
+        "similar": "http://api.rottentomatoes.com/api/public/v1.0/movies/771317257/similar.json"
+      }
+    },
+    {
+      "id": "771365948",
+      "title": "The Fault In Our Stars",
+      "year": 2014,
+      "mpaa_rating": "PG-13",
+      "runtime": 125,
+      "critics_consensus": "",
+      "release_dates": {
+        "theater": "2014-06-06"
+      },
+      "ratings": {
+        "critics_rating": "Certified Fresh",
+        "critics_score": 80,
+        "audience_rating": "Upright",
+        "audience_score": 90
+      },
+      "synopsis": "Hazel and Gus are two extraordinary teenagers who share an acerbic wit, a disdain for the conventional, and a love that sweeps them - and us - on an unforgettable journey. Their relationship is all the more miraculous, given that they met and fell in love at a cancer support group. THE FAULT IN OUR STARS, based upon the number-one bestselling novel by John Green, explores the funny, thrilling and tragic business of being alive and in love.(C) Fox",
+      "posters": {
+        "thumbnail": "http://content6.flixster.com/movie/11/17/61/11176136_tmb.jpg",
+        "profile": "http://content6.flixster.com/movie/11/17/61/11176136_tmb.jpg",
+        "detailed": "http://content6.flixster.com/movie/11/17/61/11176136_tmb.jpg",
+        "original": "http://content6.flixster.com/movie/11/17/61/11176136_tmb.jpg"
+      },
+      "abridged_cast": [
+        {
+          "name": "Shailene Woodley",
+          "id": "770676364",
+          "characters": [
+            "Hazel"
+          ]
+        },
+        {
+          "name": "Ansel Elgort",
+          "id": "771409061",
+          "characters": [
+            "Gus"
+          ]
+        },
+        {
+          "name": "Willem Dafoe",
+          "id": "162668400",
+          "characters": [
+            "Van Houten"
+          ]
+        },
+        {
+          "name": "Nat Wolff",
+          "id": "459518388",
+          "characters": [
+            "Isaac"
+          ]
+        },
+        {
+          "name": "Laura Dern",
+          "id": "162654251",
+          "characters": [
+            "Frannie"
+          ]
+        }
+      ],
+      "alternate_ids": {
+        "imdb": "2582846"
+      },
+      "links": {
+        "self": "http://api.rottentomatoes.com/api/public/v1.0/movies/771365948.json",
+        "alternate": "http://www.rottentomatoes.com/m/the_fault_in_our_stars/",
+        "cast": "http://api.rottentomatoes.com/api/public/v1.0/movies/771365948/cast.json",
+        "reviews": "http://api.rottentomatoes.com/api/public/v1.0/movies/771365948/reviews.json",
+        "similar": "http://api.rottentomatoes.com/api/public/v1.0/movies/771365948/similar.json"
+      }
+    },
+    {
+      "id": "771308692",
+      "title": "X-Men: Days of Future Past",
+      "year": 2014,
+      "mpaa_rating": "PG-13",
+      "runtime": 131,
+      "critics_consensus": "",
+      "release_dates": {
+        "theater": "2014-05-23"
+      },
+      "ratings": {
+        "critics_rating": "Certified Fresh",
+        "critics_score": 92,
+        "audience_rating": "Upright",
+        "audience_score": 93
+      },
+      "synopsis": "The ultimate X-Men ensemble fights a war for the survival of the species across two time periods in X-MEN: DAYS OF FUTURE PAST. The beloved characters from the original \"X-Men\" film trilogy join forces with their younger selves from the past, \"X-Men: First Class,\" in order to change a major historical event and fight in an epic battle that could save our future. (c) Fox",
+      "posters": {
+        "thumbnail": "http://content7.flixster.com/movie/11/17/70/11177049_tmb.jpg",
+        "profile": "http://content7.flixster.com/movie/11/17/70/11177049_tmb.jpg",
+        "detailed": "http://content7.flixster.com/movie/11/17/70/11177049_tmb.jpg",
+        "original": "http://content7.flixster.com/movie/11/17/70/11177049_tmb.jpg"
+      },
+      "abridged_cast": [
+        {
+          "name": "James McAvoy",
+          "id": "162714854",
+          "characters": [
+            "Charles Xavier/Professor X"
+          ]
+        },
+        {
+          "name": "Michael Fassbender",
+          "id": "364641814",
+          "characters": [
+            "Erik Lensherr/Magneto"
+          ]
+        },
+        {
+          "name": "Jennifer Lawrence",
+          "id": "770800260",
+          "characters": [
+            "Mystique/Raven",
+            "Raven"
+          ]
+        },
+        {
+          "name": "Patrick Stewart",
+          "id": "162664301",
+          "characters": [
+            "Charles Xavier/Professor X"
+          ]
+        },
+        {
+          "name": "Ian McKellen",
+          "id": "162653241",
+          "characters": [
+            "Erik Lensherr/Magneto"
+          ]
+        }
+      ],
+      "alternate_ids": {
+        "imdb": "1877832"
+      },
+      "links": {
+        "self": "http://api.rottentomatoes.com/api/public/v1.0/movies/771308692.json",
+        "alternate": "http://www.rottentomatoes.com/m/x_men_days_of_future_past/",
+        "cast": "http://api.rottentomatoes.com/api/public/v1.0/movies/771308692/cast.json",
+        "reviews": "http://api.rottentomatoes.com/api/public/v1.0/movies/771308692/reviews.json",
+        "similar": "http://api.rottentomatoes.com/api/public/v1.0/movies/771308692/similar.json"
+      }
+    },
+    {
+      "id": "771357104",
+      "title": "Chef",
+      "year": 2014,
+      "mpaa_rating": "R",
+      "runtime": 115,
+      "critics_consensus": "",
+      "release_dates": {
+        "theater": "2014-05-09"
+      },
+      "ratings": {
+        "critics_rating": "Certified Fresh",
+        "critics_score": 88,
+        "audience_rating": "Upright",
+        "audience_score": 89
+      },
+      "synopsis": "Chef Carl Casper (Jon Favreau) suddenly quits his job at a prominent Los Angeles restaurant after refusing to compromise his creative integrity for its controlling owner (Dustin Hoffman), he is left to figure out what's next. Finding himself in Miami, he teams up with his ex-wife (Sofia Vergara), his friend (John Leguizamo) and his son to launch a food truck. Taking to the road, Chef Carl goes back to his roots to reignite his passion for the kitchen -- and zest for life and love. (c) Open Road",
+      "posters": {
+        "thumbnail": "http://content9.flixster.com/movie/11/17/72/11177251_tmb.jpg",
+        "profile": "http://content9.flixster.com/movie/11/17/72/11177251_tmb.jpg",
+        "detailed": "http://content9.flixster.com/movie/11/17/72/11177251_tmb.jpg",
+        "original": "http://content9.flixster.com/movie/11/17/72/11177251_tmb.jpg"
+      },
+      "abridged_cast": [
+        {
+          "name": "Jon Favreau",
+          "id": "162655175",
+          "characters": [
+            "Carl Casper"
+          ]
+        },
+        {
+          "name": "Sofia Vergara",
+          "id": "162653186",
+          "characters": [
+            "Inez"
+          ]
+        },
+        {
+          "name": "John Leguizamo",
+          "id": "162652698",
+          "characters": [
+            "Martin"
+          ]
+        },
+        {
+          "name": "Bobby Cannavale",
+          "id": "162685850",
+          "characters": [
+            "Tony"
+          ]
+        },
+        {
+          "name": "Dustin Hoffman",
+          "id": "162659372",
+          "characters": [
+            "Riva"
+          ]
+        }
+      ],
+      "alternate_ids": {
+        "imdb": "2883512"
+      },
+      "links": {
+        "self": "http://api.rottentomatoes.com/api/public/v1.0/movies/771357104.json",
+        "alternate": "http://www.rottentomatoes.com/m/chef_2014/",
+        "cast": "http://api.rottentomatoes.com/api/public/v1.0/movies/771357104/cast.json",
+        "reviews": "http://api.rottentomatoes.com/api/public/v1.0/movies/771357104/reviews.json",
+        "similar": "http://api.rottentomatoes.com/api/public/v1.0/movies/771357104/similar.json"
+      }
+    },
+    {
+      "id": "771225175",
+      "title": "Godzilla",
+      "year": 2014,
+      "mpaa_rating": "PG-13",
+      "runtime": 123,
+      "critics_consensus": "",
+      "release_dates": {
+        "theater": "2014-05-16"
+      },
+      "ratings": {
+        "critics_rating": "Certified Fresh",
+        "critics_score": 73,
+        "audience_rating": "Upright",
+        "audience_score": 71
+      },
+      "synopsis": "In Summer 2014, the world's most revered monster is reborn as Warner Bros. Pictures and Legendary Pictures unleash the epic action adventure \"Godzilla.\" From visionary new director Gareth Edwards (\"Monsters\") comes a powerful story of human courage and reconciliation in the face of titanic forces of nature, when the awe-inspiring Godzilla rises to restore balance as humanity stands defenseless. (c) Warner Bros",
+      "posters": {
+        "thumbnail": "http://content7.flixster.com/movie/11/17/70/11177033_tmb.jpg",
+        "profile": "http://content7.flixster.com/movie/11/17/70/11177033_tmb.jpg",
+        "detailed": "http://content7.flixster.com/movie/11/17/70/11177033_tmb.jpg",
+        "original": "http://content7.flixster.com/movie/11/17/70/11177033_tmb.jpg"
+      },
+      "abridged_cast": [
+        {
+          "name": "Aaron Taylor-Johnson",
+          "id": "326397411",
+          "characters": [
+            "Ford Brody"
+          ]
+        },
+        {
+          "name": "Elizabeth Olsen",
+          "id": "770827678",
+          "characters": [
+            "Elle Brody"
+          ]
+        },
+        {
+          "name": "Bryan Cranston",
+          "id": "326392501",
+          "characters": [
+            "Joe Brody"
+          ]
+        },
+        {
+          "name": "David Strathairn",
+          "id": "162654527",
+          "characters": [
+            "Admiral William Stenz"
+          ]
+        },
+        {
+          "name": "Ken Watanabe",
+          "id": "335718197",
+          "characters": [
+            "Dr. Ishiro Seriwaza"
+          ]
+        }
+      ],
+      "alternate_ids": {
+        "imdb": "0831387"
+      },
+      "links": {
+        "self": "http://api.rottentomatoes.com/api/public/v1.0/movies/771225175.json",
+        "alternate": "http://www.rottentomatoes.com/m/godzilla_2014/",
+        "cast": "http://api.rottentomatoes.com/api/public/v1.0/movies/771225175/cast.json",
+        "reviews": "http://api.rottentomatoes.com/api/public/v1.0/movies/771225175/reviews.json",
+        "similar": "http://api.rottentomatoes.com/api/public/v1.0/movies/771225175/similar.json"
+      }
+    },
+    {
+      "id": "771308254",
+      "title": "Neighbors",
+      "year": 2014,
+      "mpaa_rating": "R",
+      "runtime": 96,
+      "critics_consensus": "",
+      "release_dates": {
+        "theater": "2014-05-09"
+      },
+      "ratings": {
+        "critics_rating": "Certified Fresh",
+        "critics_score": 73,
+        "audience_rating": "Upright",
+        "audience_score": 71
+      },
+      "synopsis": "Seth Rogen, Zac Efron and Rose Byrne lead the cast of Neighbors, a comedy about a young couple suffering from arrested development who are forced to live next to a fraternity house after the birth of their newborn baby. Neighbors is directed by Nick Stoller (Forgetting Sarah Marshall, Get Him to the Greek). (c) Universal",
+      "posters": {
+        "thumbnail": "http://content8.flixster.com/movie/11/17/55/11175594_tmb.jpg",
+        "profile": "http://content8.flixster.com/movie/11/17/55/11175594_tmb.jpg",
+        "detailed": "http://content8.flixster.com/movie/11/17/55/11175594_tmb.jpg",
+        "original": "http://content8.flixster.com/movie/11/17/55/11175594_tmb.jpg"
+      },
+      "abridged_cast": [
+        {
+          "name": "Seth Rogen",
+          "id": "162653310",
+          "characters": [
+            "Mac Radner"
+          ]
+        },
+        {
+          "name": "Rose Byrne",
+          "id": "162699968",
+          "characters": [
+            "Kelly Radner"
+          ]
+        },
+        {
+          "name": "Zac Efron",
+          "id": "171852647",
+          "characters": [
+            "Teddy Sanders"
+          ]
+        },
+        {
+          "name": "Elise Vargas",
+          "id": "771489151",
+          "characters": [
+            "Stella"
+          ]
+        },
+        {
+          "name": "Christopher Mintz-Plasse",
+          "id": "770679139",
+          "characters": [
+            "Scoonie"
+          ]
+        }
+      ],
+      "alternate_ids": {
+        "imdb": "2004420"
+      },
+      "links": {
+        "self": "http://api.rottentomatoes.com/api/public/v1.0/movies/771308254.json",
+        "alternate": "http://www.rottentomatoes.com/m/neighbors_2014/",
+        "cast": "http://api.rottentomatoes.com/api/public/v1.0/movies/771308254/cast.json",
+        "reviews": "http://api.rottentomatoes.com/api/public/v1.0/movies/771308254/reviews.json",
+        "similar": "http://api.rottentomatoes.com/api/public/v1.0/movies/771308254/similar.json"
+      }
+    },
+    {
+      "id": "771377343",
+      "title": "Blended",
+      "year": 2014,
+      "mpaa_rating": "PG-13",
+      "runtime": 117,
+      "critics_consensus": "",
+      "release_dates": {
+        "theater": "2014-05-23",
+        "dvd": "2014-09-22"
+      },
+      "ratings": {
+        "critics_rating": "Rotten",
+        "critics_score": 14,
+        "audience_rating": "Upright",
+        "audience_score": 69
+      },
+      "synopsis": "After a disastrous blind date, single parents Lauren and Jim agree on only one thing: they never want to see each other again. But when they each sign up separately for a fabulous family vacation with their kids, they are all stuck sharing a suite at a luxurious African safari resort for a week in \"Blended,\" the third comedy collaboration between stars Adam Sandler and Drew Barrymore.(c) Warner Bros",
+      "posters": {
+        "thumbnail": "http://content9.flixster.com/movie/11/17/70/11177051_tmb.jpg",
+        "profile": "http://content9.flixster.com/movie/11/17/70/11177051_tmb.jpg",
+        "detailed": "http://content9.flixster.com/movie/11/17/70/11177051_tmb.jpg",
+        "original": "http://content9.flixster.com/movie/11/17/70/11177051_tmb.jpg"
+      },
+      "abridged_cast": [
+        {
+          "name": "Adam Sandler",
+          "id": "162652550",
+          "characters": [
+            "Jim"
+          ]
+        },
+        {
+          "name": "Drew Barrymore",
+          "id": "162652402",
+          "characters": [
+            "Lauren"
+          ]
+        },
+        {
+          "name": "Joel McHale",
+          "id": "770792384",
+          "characters": [
+            "Mark"
+          ]
+        },
+        {
+          "name": "Kevin Nealon",
+          "id": "770677783",
+          "characters": [
+            "Eddy"
+          ]
+        },
+        {
+          "name": "Wendi McLendon-Covey",
+          "id": "493912297",
+          "characters": [
+            "Jen"
+          ]
+        }
+      ],
+      "alternate_ids": {
+        "imdb": "1086772"
+      },
+      "links": {
+        "self": "http://api.rottentomatoes.com/api/public/v1.0/movies/771377343.json",
+        "alternate": "http://www.rottentomatoes.com/m/blended/",
+        "cast": "http://api.rottentomatoes.com/api/public/v1.0/movies/771377343/cast.json",
+        "reviews": "http://api.rottentomatoes.com/api/public/v1.0/movies/771377343/reviews.json",
+        "similar": "http://api.rottentomatoes.com/api/public/v1.0/movies/771377343/similar.json"
+      }
+    },
+    {
+      "id": "771350283",
+      "title": "A Million Ways to Die in the West",
+      "year": 2014,
+      "mpaa_rating": "R",
+      "runtime": 116,
+      "critics_consensus": "",
+      "release_dates": {
+        "theater": "2014-05-30"
+      },
+      "ratings": {
+        "critics_rating": "Rotten",
+        "critics_score": 33,
+        "audience_rating": "Spilled",
+        "audience_score": 44
+      },
+      "synopsis": "Seth MacFarlane directs, produces, co-writes and plays the role of the cowardly sheep farmer Albert in A Million Ways to Die in the West. After Albert backs out of a gunfight, his fickle girlfriend leaves him for another man. When a mysterious and beautiful woman rides into town, she helps him find his courage and they begin to fall in love. But when her husband, a notorious outlaw, arrives seeking revenge, the farmer must put his newfound courage to the test. Starring alongside MacFarlane are Oscar (R) winner Charlize Theron, Liam Neeson, Amanda Seyfried, Giovanni Ribisi, Sarah Silverman and Neil Patrick Harris. MacFarlane reunites many of the filmmakers behind Universal and MRC's hit film Ted including Scott Stuber (Bluegrass Films) and Jason Clark who produce, and Wellesley Wild and Alec Sulkin who co-wrote the script. (c)Universal",
+      "posters": {
+        "thumbnail": "http://content7.flixster.com/movie/11/17/78/11177885_tmb.jpg",
+        "profile": "http://content7.flixster.com/movie/11/17/78/11177885_tmb.jpg",
+        "detailed": "http://content7.flixster.com/movie/11/17/78/11177885_tmb.jpg",
+        "original": "http://content7.flixster.com/movie/11/17/78/11177885_tmb.jpg"
+      },
+      "abridged_cast": [
+        {
+          "name": "Seth MacFarlane",
+          "id": "364629414",
+          "characters": [
+            "Albert"
+          ]
+        },
+        {
+          "name": "Charlize Theron",
+          "id": "162654733",
+          "characters": [
+            "Anna"
+          ]
+        },
+        {
+          "name": "Amanda Seyfried",
+          "id": "364614826",
+          "characters": [
+            "Louise"
+          ]
+        },
+        {
+          "name": "Liam Neeson",
+          "id": "162652242",
+          "characters": [
+            "Clinch"
+          ]
+        },
+        {
+          "name": "Giovanni Ribisi",
+          "id": "162655082",
+          "characters": [
+            "Edward"
+          ]
+        }
+      ],
+      "alternate_ids": {
+        "imdb": "2557490"
+      },
+      "links": {
+        "self": "http://api.rottentomatoes.com/api/public/v1.0/movies/771350283.json",
+        "alternate": "http://www.rottentomatoes.com/m/a_million_ways_to_die_in_the_west/",
+        "cast": "http://api.rottentomatoes.com/api/public/v1.0/movies/771350283/cast.json",
+        "reviews": "http://api.rottentomatoes.com/api/public/v1.0/movies/771350283/reviews.json",
+        "similar": "http://api.rottentomatoes.com/api/public/v1.0/movies/771350283/similar.json"
+      }
+    },
+    {
+      "id": "771371895",
+      "title": "Obvious Child",
+      "year": 2014,
+      "mpaa_rating": "R",
+      "runtime": 83,
+      "critics_consensus": "",
+      "release_dates": {
+        "theater": "2014-06-06"
+      },
+      "ratings": {
+        "critics_rating": "Certified Fresh",
+        "critics_score": 88,
+        "audience_rating": "Upright",
+        "audience_score": 77
+      },
+      "synopsis": "For aspiring comedian Donna Stern, everyday life as a female twenty-something provides ample material for her incredibly relatable brand of humor. On stage, Donna is unapologetically herself, joking about topics as intimate as her sex life and as crude as her day-old underwear. But when Donna gets dumped, loses her job, and finds herself pregnant just in time for Valentine's Day, she has to navigate the murky waters of independent adulthood for the first time. As she grapples with an uncertain financial future, an unwanted pregnancy, and a surprising new suitor, Donna begins to discover that the most terrifying thing about adulthood isn't facing it all on her own. It's allowing herself to accept the support and love of others. And be truly vulnerable. Never failing to find the comedy and humanity in each awkward situation she encounters, Donna finds out along the way what it means to be as brave in life as she is on stage. Anchored by a breakout performance from Jenny Slate, OBVIOUS CHILD is a winning discovery, packed tight with raw, energetic comedy and moments of poignant human honesty. Writer/Director Gillian Robespierre handles the topic of Donna's unwanted pregnancy with a refreshing matter-of-factness rarely seen onscreen. And with Donna, Slate and Robespierre have crafted a character for the ages - a female audiences will recognize, cheer for, and love. (C) A24",
+      "posters": {
+        "thumbnail": "http://content6.flixster.com/movie/11/17/85/11178532_tmb.jpg",
+        "profile": "http://content6.flixster.com/movie/11/17/85/11178532_tmb.jpg",
+        "detailed": "http://content6.flixster.com/movie/11/17/85/11178532_tmb.jpg",
+        "original": "http://content6.flixster.com/movie/11/17/85/11178532_tmb.jpg"
+      },
+      "abridged_cast": [
+        {
+          "name": "Jenny Slate",
+          "id": "771094239",
+          "characters": [
+            "Donna Stern"
+          ]
+        },
+        {
+          "name": "Gaby Hoffman",
+          "id": "770676779",
+          "characters": [
+            "Nellie"
+          ]
+        },
+        {
+          "name": "David Cross",
+          "id": "326299938",
+          "characters": [
+            "Sam"
+          ]
+        },
+        {
+          "name": "Jake Lacy",
+          "id": "771454620",
+          "characters": [
+            "Max"
+          ]
+        },
+        {
+          "name": "Gabe Liedman",
+          "id": "771477130",
+          "characters": [
+            "Joey"
+          ]
+        }
+      ],
+      "alternate_ids": {
+        "imdb": "2910274"
+      },
+      "links": {
+        "self": "http://api.rottentomatoes.com/api/public/v1.0/movies/771371895.json",
+        "alternate": "http://www.rottentomatoes.com/m/obvious_child/",
+        "cast": "http://api.rottentomatoes.com/api/public/v1.0/movies/771371895/cast.json",
+        "reviews": "http://api.rottentomatoes.com/api/public/v1.0/movies/771371895/reviews.json",
+        "similar": "http://api.rottentomatoes.com/api/public/v1.0/movies/771371895/similar.json"
+      }
+    },
+    {
+      "id": "771305205",
+      "title": "Rio 2",
+      "year": 2014,
+      "mpaa_rating": "G",
+      "runtime": 105,
+      "critics_consensus": "",
+      "release_dates": {
+        "theater": "2014-04-11",
+        "dvd": "2014-07-15"
+      },
+      "ratings": {
+        "critics_rating": "Rotten",
+        "critics_score": 47,
+        "audience_rating": "Upright",
+        "audience_score": 62
+      },
+      "synopsis": "It's a jungle out there for Blu, Jewel and their three kids in RIO 2, after they're hurtled from that magical city to the wilds of the Amazon. As Blu tries to fit in, he goes beak-to-beak with the vengeful Nigel, and meets the most fearsome adversary of all - his father-in-law. All our favorite RIO characters are back, and they're joined by Oscar (R) nominee Andy Garcia, Grammy (R) winner Bruno Mars, Tony (R) winner Kristin Chenoweth and Oscar/Emmy (R)/Tony winner Rita Moreno. RIO 2 also features new Brazilian artists and original music by Janelle Monae and Wondaland. (c) Fox",
+      "posters": {
+        "thumbnail": "http://content6.flixster.com/movie/11/17/88/11178860_tmb.jpg",
+        "profile": "http://content6.flixster.com/movie/11/17/88/11178860_tmb.jpg",
+        "detailed": "http://content6.flixster.com/movie/11/17/88/11178860_tmb.jpg",
+        "original": "http://content6.flixster.com/movie/11/17/88/11178860_tmb.jpg"
+      },
+      "abridged_cast": [
+        {
+          "name": "Anne Hathaway",
+          "id": "162656190",
+          "characters": [
+            "Jewel"
+          ]
+        },
+        {
+          "name": "Jesse Eisenberg",
+          "id": "162654393",
+          "characters": [
+            "Blu"
+          ]
+        },
+        {
+          "name": "will.i.am",
+          "id": "770877658",
+          "characters": [
+            "Pedro"
+          ]
+        },
+        {
+          "name": "Jamie Foxx",
+          "id": "162652975",
+          "characters": [
+            "Nico"
+          ]
+        },
+        {
+          "name": "George Lopez",
+          "id": "162652717",
+          "characters": [
+            "Raphael"
+          ]
+        }
+      ],
+      "alternate_ids": {
+        "imdb": "2357291"
+      },
+      "links": {
+        "self": "http://api.rottentomatoes.com/api/public/v1.0/movies/771305205.json",
+        "alternate": "http://www.rottentomatoes.com/m/rio_2/",
+        "cast": "http://api.rottentomatoes.com/api/public/v1.0/movies/771305205/cast.json",
+        "reviews": "http://api.rottentomatoes.com/api/public/v1.0/movies/771305205/reviews.json",
+        "similar": "http://api.rottentomatoes.com/api/public/v1.0/movies/771305205/similar.json"
+      }
+    },
+    {
+      "id": "771381496",
+      "title": "The Villain",
+      "year": 2014,
+      "mpaa_rating": "Unrated",
+      "runtime": 129,
+      "release_dates": {
+        "theater": "2014-06-27"
+      },
+      "ratings": {
+        "critics_score": -1,
+        "audience_rating": "Upright",
+        "audience_score": 62
+      },
+      "synopsis": "Guru is a quiet, tough and ruthless boy, working for a politician, Prahlad. A dark past refuses to let Guru sleep at night until he meets a girl, Aisha. He falls in love with her, his life changes and he convinces Aisha to get married to him. Guru even quits his job and moves from Goa to Mumbai to make a new beginning with Aisha. Just when things seem perfect, she falls prey to an attack. Devastated, Guru starts hunting the miscreant and is shocked to learn of his seemingly innocuous and simple identity. Something is amiss and Guru is unable to place a finger on the precise problem. Who is the real assailant? Does Guru succeed in getting even with the assailant? And what is the motive behind her killing? The plot thickens as the astonishing mystery unveils and new realizations come to the forefront. This visceral, hard-boiled edge-of-the-seat drama with romance and chart-busting music, comes from director Mohit Suri, renowned for his inimitable cult films, Woh Lamhe, Zeher, Awarapan, Raaz-2, and the recent Aashiqui-2. Balaji teams up with Suri on his first directorial feature outside the Mukesh Bhatt and Mahesh Bhatt banner. It also marks the first-time pairing of Sidharth and Shraddha.(c) Official Facebook",
+      "posters": {
+        "thumbnail": "http://content9.flixster.com/movie/11/17/87/11178723_tmb.jpg",
+        "profile": "http://content9.flixster.com/movie/11/17/87/11178723_tmb.jpg",
+        "detailed": "http://content9.flixster.com/movie/11/17/87/11178723_tmb.jpg",
+        "original": "http://content9.flixster.com/movie/11/17/87/11178723_tmb.jpg"
+      },
+      "abridged_cast": [
+        {
+          "name": "Sidharth Malhotra",
+          "id": "771478137"
+        },
+        {
+          "name": "Ritesh Deshmukh",
+          "id": "171885286"
+        },
+        {
+          "name": "Shraddha Kapoor",
+          "id": "771103199"
+        }
+      ],
+      "alternate_ids": {
+        "imdb": "3175038"
+      },
+      "links": {
+        "self": "http://api.rottentomatoes.com/api/public/v1.0/movies/771381496.json",
+        "alternate": "http://www.rottentomatoes.com/m/ek_villain/",
+        "cast": "http://api.rottentomatoes.com/api/public/v1.0/movies/771381496/cast.json",
+        "reviews": "http://api.rottentomatoes.com/api/public/v1.0/movies/771381496/reviews.json",
+        "similar": "http://api.rottentomatoes.com/api/public/v1.0/movies/771381496/similar.json"
+      }
+    },
+    {
+      "id": "771312513",
+      "title": "Captain America: The Winter Soldier",
+      "year": 2014,
+      "mpaa_rating": "PG-13",
+      "runtime": 136,
+      "critics_consensus": "",
+      "release_dates": {
+        "theater": "2014-04-04",
+        "dvd": "2014-09-09"
+      },
+      "ratings": {
+        "critics_rating": "Certified Fresh",
+        "critics_score": 89,
+        "audience_rating": "Upright",
+        "audience_score": 94
+      },
+      "synopsis": "After being deemed unfit for military service, Steve Rogers volunteers for a top secret research project that turns him into Captain America, a superhero dedicated to defending America's ideals.",
+      "posters": {
+        "thumbnail": "http://content8.flixster.com/movie/11/17/72/11177246_tmb.jpg",
+        "profile": "http://content8.flixster.com/movie/11/17/72/11177246_tmb.jpg",
+        "detailed": "http://content8.flixster.com/movie/11/17/72/11177246_tmb.jpg",
+        "original": "http://content8.flixster.com/movie/11/17/72/11177246_tmb.jpg"
+      },
+      "abridged_cast": [
+        {
+          "name": "Chris Evans",
+          "id": "162652784",
+          "characters": [
+            "Captain America/Steve Rogers"
+          ]
+        },
+        {
+          "name": "Anthony Mackie",
+          "id": "162653786",
+          "characters": [
+            "Sam Wilson/Falcon"
+          ]
+        },
+        {
+          "name": "Sebastian Stan",
+          "id": "326299814",
+          "characters": [
+            "Bucky Barnes/Winter Soldier"
+          ]
+        },
+        {
+          "name": "Samuel L. Jackson",
+          "id": "162652156",
+          "characters": [
+            "Nick Fury"
+          ]
+        },
+        {
+          "name": "Scarlett Johansson",
+          "id": "162652872",
+          "characters": [
+            "Natasha Romanoff/Black Widow"
+          ]
+        }
+      ],
+      "alternate_ids": {
+        "imdb": "1843866"
+      },
+      "links": {
+        "self": "http://api.rottentomatoes.com/api/public/v1.0/movies/771312513.json",
+        "alternate": "http://www.rottentomatoes.com/m/captain_america_the_winter_soldier_2014/",
+        "cast": "http://api.rottentomatoes.com/api/public/v1.0/movies/771312513/cast.json",
+        "reviews": "http://api.rottentomatoes.com/api/public/v1.0/movies/771312513/reviews.json",
+        "similar": "http://api.rottentomatoes.com/api/public/v1.0/movies/771312513/similar.json"
+      }
+    },
+    {
+      "id": "771249926",
+      "title": "The Amazing Spider-Man 2",
+      "year": 2014,
+      "mpaa_rating": "PG-13",
+      "runtime": 142,
+      "critics_consensus": "",
+      "release_dates": {
+        "theater": "2014-05-02",
+        "dvd": "2014-08-19"
+      },
+      "ratings": {
+        "critics_rating": "Rotten",
+        "critics_score": 53,
+        "audience_rating": "Upright",
+        "audience_score": 71
+      },
+      "synopsis": "We've always known that Spider-Man's most important battle has been within himself: the struggle between the ordinary obligations of Peter Parker and the extraordinary responsibilities of Spider-Man. But in The Amazing Spider-Man 2, Peter Parker finds that a greater conflict lies ahead. It's great to be Spider-Man (Andrew Garfield). For Peter Parker, there's no feeling quite like swinging between skyscrapers, embracing being the hero, and spending time with Gwen (Emma Stone). But being Spider-Man comes at a price: only Spider-Man can protect his fellow New Yorkers from the formidable villains that threaten the city. With the emergence of Electro (Jamie Foxx), Peter must confront a foe far more powerful than he. And as his old friend, Harry Osborn (Dane DeHaan), returns, Peter comes to realize that all of his enemies have one thing in common: OsCorp. (c) Columbia",
+      "posters": {
+        "thumbnail": "http://content8.flixster.com/movie/11/17/72/11177270_tmb.jpg",
+        "profile": "http://content8.flixster.com/movie/11/17/72/11177270_tmb.jpg",
+        "detailed": "http://content8.flixster.com/movie/11/17/72/11177270_tmb.jpg",
+        "original": "http://content8.flixster.com/movie/11/17/72/11177270_tmb.jpg"
+      },
+      "abridged_cast": [
+        {
+          "name": "Andrew Garfield",
+          "id": "770779702",
+          "characters": [
+            "Peter Parker/Spider-Man"
+          ]
+        },
+        {
+          "name": "Emma Stone",
+          "id": "770683296",
+          "characters": [
+            "Gwen Stacy"
+          ]
+        },
+        {
+          "name": "Jamie Foxx",
+          "id": "162652975",
+          "characters": [
+            "Max Dillon/Electro"
+          ]
+        },
+        {
+          "name": "Dane DeHaan",
+          "id": "770873652",
+          "characters": [
+            "Harry Osborn"
+          ]
+        },
+        {
+          "name": "Chris Cooper",
+          "id": "162654289",
+          "characters": [
+            "Noman Osborn"
+          ]
+        }
+      ],
+      "alternate_ids": {
+        "imdb": "1872181"
+      },
+      "links": {
+        "self": "http://api.rottentomatoes.com/api/public/v1.0/movies/771249926.json",
+        "alternate": "http://www.rottentomatoes.com/m/the_amazing_spider_man_2/",
+        "cast": "http://api.rottentomatoes.com/api/public/v1.0/movies/771249926/cast.json",
+        "reviews": "http://api.rottentomatoes.com/api/public/v1.0/movies/771249926/reviews.json",
+        "similar": "http://api.rottentomatoes.com/api/public/v1.0/movies/771249926/similar.json"
+      }
+    },
+    {
+      "id": "771357481",
+      "title": "Million Dollar Arm",
+      "year": 2014,
+      "mpaa_rating": "PG",
+      "runtime": 124,
+      "critics_consensus": "",
+      "release_dates": {
+        "theater": "2014-05-16"
+      },
+      "ratings": {
+        "critics_rating": "Fresh",
+        "critics_score": 61,
+        "audience_rating": "Upright",
+        "audience_score": 76
+      },
+      "synopsis": "Based on a true story, Disney's \"Million Dollar Arm\" follows JB Bernstein, a once-successful sports agent who now finds himself edged out by bigger, slicker competitors. He and his partner Aash (Aasif Mandvi) will have to close their business down for good if JB doesn't come up with something fast. Late one night, while watching cricket being played in India on TV, JB comes up with an idea so radical it just might work. Why not go to there and find the next baseball pitching sensation? Setting off for Mumbai with nothing but a gifted but cantankerous scout (Alan Arkin) in tow, JB stages a televised, nationwide competition called \"Million Dollar Arm\" where 40,000 hopefuls compete before two 18-year-old finalists, Rinku and Dinesh (Suraj Sharma, Madhur Mittal), emerge as winners. JB brings them back to the United States to train with legendary pitching coach Tom House (Bill Paxton). The goal: get the boys signed to a major league team. Not only is the game itself difficult to master, but life in the U.S. with a committed bachelor makes things even more complicated-for all of them. While Rinku and Dinesh learn the finer points of baseball and American culture, they in turn teach JB the true meaning of teamwork and commitment. Ultimately, what began as a purely commercial venture becomes something more and leads JB to find the one thing he was never looking for at all-a family. (c) Walt Disney Pictures",
+      "posters": {
+        "thumbnail": "http://content8.flixster.com/movie/11/17/77/11177778_tmb.jpg",
+        "profile": "http://content8.flixster.com/movie/11/17/77/11177778_tmb.jpg",
+        "detailed": "http://content8.flixster.com/movie/11/17/77/11177778_tmb.jpg",
+        "original": "http://content8.flixster.com/movie/11/17/77/11177778_tmb.jpg"
+      },
+      "abridged_cast": [
+        {
+          "name": "Jon Hamm",
+          "id": "770696952",
+          "characters": [
+            "JB Bernstein"
+          ]
+        },
+        {
+          "name": "Aasif Mandvi",
+          "id": "364605673",
+          "characters": [
+            "Aash"
+          ]
+        },
+        {
+          "name": "Bill Paxton",
+          "id": "162654226",
+          "characters": [
+            "Tom House"
+          ]
+        },
+        {
+          "name": "Madhur Mittal",
+          "id": "770826138",
+          "characters": [
+            "Dinesh"
+          ]
+        },
+        {
+          "name": "Suraj Sharma",
+          "id": "771086290",
+          "characters": [
+            "Rinku"
+          ]
+        }
+      ],
+      "alternate_ids": {
+        "imdb": "1647668"
+      },
+      "links": {
+        "self": "http://api.rottentomatoes.com/api/public/v1.0/movies/771357481.json",
+        "alternate": "http://www.rottentomatoes.com/m/million_dollar_arm/",
+        "cast": "http://api.rottentomatoes.com/api/public/v1.0/movies/771357481/cast.json",
+        "reviews": "http://api.rottentomatoes.com/api/public/v1.0/movies/771357481/reviews.json",
+        "similar": "http://api.rottentomatoes.com/api/public/v1.0/movies/771357481/similar.json"
+      }
+    }
+  ],
+  "links": {
+    "self": "http://api.rottentomatoes.com/api/public/v1.0/lists/movies/box_office.json?limit=20&country=us",
+    "alternate": "http://www.rottentomatoes.com/movie/box-office/"
+  },
+  "link_template": "http://api.rottentomatoes.com/api/public/v1.0/lists/movies/box_office.json?limit={num-results}&country={country-code}"
+}
