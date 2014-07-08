@@ -1,0 +1,125 @@
+// ---------- !TABLE OF CONTENTS ---------- \\
+
+// CORE.............  Header, Content and Footer
+// BUTTONS.................  Button Types, Sizes and States
+
+// ---------- !CORE ---------- \\
+
+$header-height-small: 56px;
+$header-height-medium: 64px;
+
+header#header {
+  position: fixed;
+  width: 100%;
+  height: $header-height-small;
+  background-color: $teal;
+  @include box-shadow(0 2px 5px rgba(0, 0, 0, 0.26));
+  // color: $white;
+  z-index: 4;
+
+  @media #{$medium-up} {
+    height: $header-height-medium;
+    padding: 0 16px;
+  }
+
+  h2.title {
+    position: absolute;
+    left: 72px;
+    font-size: 20px;
+    // text-align: center;
+    font-weight: $font-weight-regular;
+    line-height: $header-height-small;
+    color: #fff;
+
+    @media #{$medium-up} {
+      line-height: $header-height-medium;
+      font-size: 24px;
+    }
+  }
+
+  .btn {
+    height: 48px;
+    width: 48px;
+    background: rbga(0,0,0, 0.9);
+    padding: 0 6px;
+    margin: 4px;
+
+    @media #{$medium-up} {
+      padding: 0 6px;
+      margin: 8px 0;
+    }
+
+
+    &.menu {
+      padding: 16px 12px;
+
+      .line, .line_one, .line_two, .line_three {
+        width: 18px;
+        height: 2px;
+        background-color: white;
+      }
+
+      .line_one {
+      }
+
+      .line_two {
+        margin-top: 3px;
+      }
+
+      .line_three {
+        margin-top: 3px;
+      }
+    }
+  }
+}
+
+.content {
+  padding-top: $header-height-small;
+  @include transition(all 1s cubic-bezier(0.19, 1, 0.22, 1));
+
+  @media #{$medium-up} {
+    width: 740px;
+    padding-top: $header-height-medium;
+    margin: 0 auto 0;
+  }
+}
+
+aside.sidebar {
+  position: fixed;
+  top: 0;
+  left: -240px;
+  width: 240px;
+  height: 100%;
+  background: #fff;
+  z-index: 100;
+  @include transition (all 0.3s cubic-bezier(.4,0,.2,1) 0.1s);
+  @include user-select(none);
+
+  &.is-visible {
+    display: inline-block;
+    left: 0;
+    & + .overlay {
+      display: inline-block;
+      @include bgfade(#000, 0.5);
+      z-index: 99;
+    }
+  }
+
+  .category-list {
+    li {
+      padding: 24px 15px 0;
+      color: rgb(51, 51, 51);
+      font-size: 13px;
+      font-weight: $font-weight-medium;
+    }
+  }
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  @include transition (all 0.3s ease-in);
+}

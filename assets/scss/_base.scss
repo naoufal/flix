@@ -1,0 +1,171 @@
+// ---------- !TABLE OF CONTENTS ---------- \\
+
+// Sections.............  Section info
+// Groupings............  Section info
+// Tables...............  Section info
+// Forms................  Section info
+// Embedded.............  Section info
+// Text-level...........
+
+
+// ---------- !SECTIONS ---------- \\
+
+
+* {
+  -webkit-font-smoothing: antialiased;
+  @include box-sizing(border-box);
+  margin: 0;
+}
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  -webkit-animation: bugfix infinite 1s;
+  background-color: $off-white;
+  font: {
+    family: $font-family;
+    size: $font-size-small;
+    weight: $font-weight-regular;
+  }
+  line-height: 1.5em;
+}
+
+html, body {
+  position: relative;
+  height: 100%;
+}
+
+article {
+
+}
+
+nav {
+
+}
+
+aside {
+
+}
+
+section {
+
+}
+
+header {
+
+}
+
+footer {
+
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0 0 10px;
+
+  font: {
+    family: $font-family;
+  };
+  line-height: 1.4em;
+}
+
+h1, .h1 {
+  font-size: $font-size-large;
+  @media #{$medium-up} {
+    font-size: $font-size-x-large;
+  }
+  @media #{$large-up} {
+    font-size: $font-size-xx-large;
+  }
+}
+
+h2, .h2{
+  font-size: $font-size-large;
+  @media #{$large-up} {
+    font-size: $font-size-x-large;
+  }
+}
+
+h3, .h3 {
+  font-size: $font-size-medium;
+  @media #{$large-up} {
+    font-size: $font-size-large;
+  }
+}
+
+main {
+
+}
+
+// ---------- !GROUPINGS ---------- \\
+
+p {
+  margin: 0 0 10px;
+  padding: 0 0 10px;
+  line-height: 1.7em;
+}
+
+hr {
+  margin: 20px 0;
+  border: 0;
+  border-top: 1px solid #ccd9de;
+}
+
+blockquote {
+  margin: 10px 0 20px;
+  padding-left: 20px;
+  border-left: 4px solid #ccd9de;
+}
+
+ol, ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  margin: 0;
+}
+
+div {
+  line-height: 1.5em;
+}
+
+// ---------- !TEXT-LEVEL ---------- \\
+a {
+  @media #{$small-only} {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+  }
+  text-decoration: none;
+  color: $color-link;
+  img {
+    border: none;
+  }
+}
+
+em {}
+
+strong {
+  color: $color-text-primary;
+}
+
+i {}
+
+b {}
+
+u {}
+
+s {}
+
+small {}
+
+abbr {}
+
+q {}
+
+cite {}
+
+dfn {}
+
+sub {}
+
+sup {}
