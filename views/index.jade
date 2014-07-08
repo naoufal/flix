@@ -1,0 +1,27 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, user-scalable=no')
+    title Flix
+    //- meta(name='description', content='')
+    //- meta(name='keywords', content='')
+    link(rel='stylesheet', href='/css/style.css')
+    script( type='text/javascript', src='http://localhost:35729/livereload.js')
+    script(src='/js/bundle.js')
+body
+  header#header
+    .btn.menu.left
+      .line_one
+      .line_two
+      .line_three
+    .btn.right
+    h2.title In Theatres
+  .alert.offline
+    .title Offline Mode
+    .message Only categories and movies you've viewed are available.
+  .content
+    ul.movie-list
+  aside.sidebar
+    ul.category-list
+  .overlay
