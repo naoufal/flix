@@ -1,7 +1,10 @@
 .DS_Store
 .nodemonignore
-temp/
-node_modules/
-config/local.js
-public/
+
 test.js
+config/local.js
+
+assets/lib-bower/
+node_modules/
+public/
+temp/
