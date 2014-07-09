@@ -1,7 +1,11 @@
 var $        = require('jquery');
 var Backbone = require('backbone');
 var _        = require('lodash');
-var History  = require('history');
+require('history'); // There's surely a better way of doing this.
+
+$(function(){
+  console.log(History.Adapter)
+});
 
 module.exports.MovieList = Backbone.View.extend({
   el: '.movie-list',
@@ -57,8 +61,6 @@ module.exports.CategoryList = Backbone.View.extend({
     _.bindAll(this, 'render'); // fixes loss of context for 'this' within methods
     this.render();
     this.collection.bind('reset', this.render);
-
-    // this can be replaced with current url (once push state is setup)
   },
   render: function(){
     var self = this;
@@ -101,10 +103,10 @@ module.exports.CategoryList = Backbone.View.extend({
 
     if (cached_is_expired && navigator.onLine) {
       movie_collection = new Collection.Movies({category: category});
-      console.log('old cache');
+      // console.log('old cache');
     } else {
       movie_collection = new Collection.Movies(cache_response.movies);
-      console.log('cache');
+      // console.log('cache');
     }
 
     var movie_list = new View.MovieList({
@@ -145,7 +147,11 @@ module.exports.CategoryItem = Backbone.View.extend({
     this.setPushState();
   },
   setPushState: function(){
-    History.pushState(null, this.model.get('title'), this.model.get('name'));
+    var model_name = this.model.get('name');
+    var title = this.model.get('title') + ' | Flix'
+    History.pushState({
+      value: model_name
+    }, title, model_name);
   }
 });
 

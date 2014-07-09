@@ -48,13 +48,13 @@
     "grunt-sass": "^0.14.0",
     "load-grunt-tasks": "^0.6.0"
   },
-  "browser": {
-    "history": "./assets/lib-bower/history.js/scripts/uncompressed/history.js"
-  },
-  "browserify-shim": {
-    "history": "history"
-  },
   "browserify": {
     "transform": [ "browserify-shim" ]
+  },
+  "browser": {
+    "history": "./assets/lib-bower/history.js/scripts/bundled-uncompressed/html4+html5/jquery.history.js"
+  },
+  "browserify-shim": {
+    "history": { "exports": "history", "depends": [ "jquery:jQuery" ] }
   }
 }

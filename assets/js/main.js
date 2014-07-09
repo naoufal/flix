@@ -1,8 +1,8 @@
 var $        = require('jquery');
 var Backbone = require('backbone');
 var _        = require('lodash');
-var History  = require('history');
 Backbone.$   = $;
+
 
 // Backbone
 Model        = require('./models');
@@ -26,6 +26,7 @@ Flix = new function(){
 
   this.init = function(){
     self.initLayout();
+    self.initHistory();
     self.isUserOnline();
   }
 
@@ -38,6 +39,13 @@ Flix = new function(){
     initialRoute(category_list);
   }
 
+  this.initHistory = function() {
+    History.Adapter.bind(window,'statechange',function(){ // Note: We are using statechange instead of popstate
+      var State = History.getState(); // Note: We are using History.getState() instead of event.state
+      console.log(State);
+    });
+  }
+
   // polls to see if user is offline and displays offline notification
   this.isUserOnline = function() {
     if (navigator.onLine) {
@@ -47,7 +55,7 @@ Flix = new function(){
       self.config.isOnline = false;
       $('.offline').addClass('is-visible');
     }
-    console.log(self.config.isOnline);
+
     setTimeout(function(){
       self.isUserOnline();
     }, 3000)
