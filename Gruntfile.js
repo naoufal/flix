@@ -89,6 +89,10 @@ module.exports = function (grunt) {
       options: {
         logConcurrentOutput: true
       }
+    },
+
+    exec: {
+      run_tests: 'NODE_ENV=test ./node_modules/.bin/mocha'
     }
 
   });
@@ -96,4 +100,5 @@ module.exports = function (grunt) {
   // Task groups & aliases ///////////////////////////////////////
   grunt.registerTask('dev', ['build', 'concurrent']);
   grunt.registerTask('build', ['copy', 'browserify', 'sass']);
+  grunt.registerTask('test', ['exec:run_tests']);
 }

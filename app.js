@@ -29,10 +29,10 @@ app.get('/', function(req, res){
   res.render('index');
 });
 
-app.get('/data/in-theatres', controllers.in_theatres);
-app.get('/data/box-office', controllers.box_office);
-app.get('/data/new-releases', controllers.new_releases);
-app.get('/data/top-rentals', controllers.top_rentals);
+app.get('/api/category/in-theatres', controllers.in_theatres);
+app.get('/api/category/box-office', controllers.box_office);
+app.get('/api/category/new-releases', controllers.new_releases);
+app.get('/api/category/top-rentals', controllers.top_rentals);
 
 app.get('*', function(req, res){
   res.render('index');
