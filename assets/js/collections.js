@@ -15,7 +15,7 @@ module.exports.Movies = Backbone.Collection.extend({
     }
 
     category = this.options.category;
-    return API_URL + '/data/' + category;
+    return API_URL + '/api/category/' + category;
   },
   parse: function(response, xhr){
     // add response to localStorage
