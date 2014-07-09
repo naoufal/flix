@@ -1,10 +1,11 @@
-var nconf = require('nconf');
-var _ = require('lodash');
-var moment = require('moment');
-var Step = require('step');
+var nconf   = require('nconf');
+var _       = require('lodash');
+var moment  = require('moment');
+var Step    = require('step');
 var request = require('superagent');
-var nconf = require('nconf');
-var redis = require('../lib/init-redis');
+var nconf   = require('nconf');
+var redis   = require('../lib/init-redis');
+var debug   = require('debug')('cache');
 
 var BASE_URL = 'http://api.rottentomatoes.com/api/public/v1.0/lists/';
 var RT_KEY = nconf.get('ROTTENTOMATOES_KEY');
@@ -53,7 +54,7 @@ var getResponse = function(category, cb) {
     function redisReturn(err, movies) {
       if (err) return cb(err);
       if (movies) {
-        console.log('got cache');
+        debug('got (cache:' + category + ') from redis')
         movies = JSON.parse(movies);
         return cb(null, movies);
       }
@@ -80,7 +81,7 @@ var getResponse = function(category, cb) {
     },
     function redisError(err) {
       if (err) console.error(err);
-      console.log('set cache');
+      debug('set (cache:' + category + ') in redis')
     }
   );
 }
