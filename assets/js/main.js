@@ -8,10 +8,12 @@ Backbone.$   = $;
 Model        = require('./models');
 Collection   = require('./collections');
 View         = require('./views');
+UI           = require('./ui');
 
 
 $(function(){
   Flix.init();
+  UI.init();
 });
 
 Flix = new function(){
