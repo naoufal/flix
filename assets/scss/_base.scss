@@ -21,6 +21,7 @@ html {
 }
 
 body {
+  position: relative;
   -webkit-animation: bugfix infinite 1s;
   background-color: $off-white;
   font: {
@@ -65,7 +66,9 @@ h1, h2, h3, h4, h5, h6 {
 
   font: {
     family: $font-family;
-  };
+    weight: $font-weight-medium;
+  }
+  color: $color-text-primary;
   line-height: 1.4em;
 }
 
@@ -100,8 +103,6 @@ main {
 // ---------- !GROUPINGS ---------- \\
 
 p {
-  margin: 0 0 10px;
-  padding: 0 0 10px;
   line-height: 1.7em;
 }
 

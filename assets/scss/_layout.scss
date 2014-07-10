@@ -122,4 +122,15 @@ aside.sidebar {
   width: 100%;
   z-index: -1;
   @include transition (all 0.3s ease-in);
+
+  &.is-visible {
+    display: inline-block;
+    @include bgfade(#000, 0.5);
+    z-index: 99;
+  }
+  .overlay-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
 }
