@@ -106,6 +106,7 @@ module.exports.CategoryList = Backbone.View.extend({
     var movie_list = new View.MovieList({
       collection: movie_collection
     });
+    movie_list.render();
   }
 });
 
