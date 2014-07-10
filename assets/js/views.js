@@ -78,6 +78,8 @@ module.exports.CategoryList = Backbone.View.extend({
       cache_response = JSON.parse(cache_response);
 
       this.isTimestampExpired(cache_response, category_name);
+    } else if (!cache_response && !navigator.onLine) {
+      UI.showPopup('You\'re offline', 'This movie category is not available in offline mode.');
     } else {
       // console.log('no cached');
       var movie_collection = new Collection.Movies({category: category_name});
