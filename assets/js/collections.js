@@ -9,11 +9,6 @@ module.exports.Movies = Backbone.Collection.extend({
   url: function(){
     var category;
 
-    // fallback if no category is provided
-    if (!this.options.category) {
-      this.options.category = 'in-theatres';
-    }
-
     category = this.options.category;
     return API_URL + '/api/category/' + category;
   },
@@ -21,7 +16,10 @@ module.exports.Movies = Backbone.Collection.extend({
     // add response to localStorage
     var cache_key = this.options.category.replace('-', '_');
 
-    localStorage.setItem(cache_key, JSON.stringify(response));
+    // only cache if response has movies
+    if (response.movies) {
+      localStorage.setItem(cache_key, JSON.stringify(response));
+    }
 
     return response.movies;
   },
