@@ -13,6 +13,8 @@ module.exports.Movies = Backbone.Collection.extend({
     return API_URL + '/api/category/' + category;
   },
   parse: function(response, xhr){
+    if (response.error) return UI.showPopup('Something went wrong', response.error);
+
     // add response to localStorage
     var cache_key = this.options.category.replace('-', '_');
 

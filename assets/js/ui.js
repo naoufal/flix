@@ -30,10 +30,12 @@ module.exports = new function(){
     })
   }
 
-  this.showPopup = function() {
+  this.showPopup = function(title, string) {
     var $popup = $('.popup');
     var $overlay = $('.overlay');
 
+    $popup.find('.popup-content h3').html(title);
+    $popup.find('.popup-content p').html(string);
     $popup.addClass('is-visible');
     $overlay.addClass('is-visible');
     $overlay.on('click', function(){
