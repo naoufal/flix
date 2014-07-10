@@ -21,24 +21,28 @@ var URL = {
 
 exports.in_theatres = function(req, res){
   getResponse('in_theatres', function(err, movies) {
+    if (err) return res.json({error: err});
     res.json({timestamp: new Date().getTime(), movies: movies});
   });
 };
 
 exports.box_office = function(req, res){
   getResponse('box_office', function(err, movies) {
+    if (err) return res.json({error: err});
     res.json({timestamp: new Date().getTime(), movies: movies});
   });
 };
 
 exports.new_releases = function(req, res){
   getResponse('new_releases', function(err, movies) {
+    if (err) return res.json({error: err});
     res.json({timestamp: new Date().getTime(), movies: movies});
   });
 };
 
 exports.top_rentals = function(req, res){
   getResponse('top_rentals', function(err, movies) {
+    if (err) return res.json({error: err});
     res.json({timestamp: new Date().getTime(), movies: movies});
   });
 }
@@ -67,6 +71,7 @@ var getResponse = function(category, cb) {
         .end(function(err, response){
           if (err) return cb(err);
           response = JSON.parse(response.text);
+
           formatMovieResponse(response, function(err, movies){
             if (err) return cb(err);
             cb(null, movies)
@@ -87,6 +92,7 @@ var getResponse = function(category, cb) {
 }
 
 var formatMovieResponse = function(response, cb) {
+  if (!response.movies) return cb( new Error('We\'re not currently able to get movies'))
   var movies = _.map(response.movies, function(movie){
     return {
       ids: {
