@@ -3,15 +3,10 @@ var Backbone = require('backbone');
 var _        = require('lodash');
 require('history'); // There's surely a better way of doing this.
 
-$(function(){
-  console.log(History.Adapter)
-});
-
 module.exports.MovieList = Backbone.View.extend({
   el: '.movie-list',
   initialize: function() {
     _.bindAll(this, 'render'); // fixes loss of context for 'this' within methods
-    this.render();
     this.collection.bind('reset', this.render);
   },
   render: function(){
@@ -77,7 +72,6 @@ module.exports.CategoryList = Backbone.View.extend({
   getMovies: function(category_name, category_title){
     var cache_key = category_name.replace('-', '_');
     var cache_response = localStorage.getItem(cache_key);
-
     // if cache response, parse it.
     if (cache_response) {
       // console.log('has cache');
