@@ -14,7 +14,6 @@ header#header {
   height: $header-height-small;
   background-color: $teal;
   @include box-shadow(0 2px 5px rgba(0, 0, 0, 0.26));
-  // color: $white;
   z-index: 4;
 
   @media #{$medium-up} {
@@ -74,6 +73,7 @@ header#header {
 }
 
 .content {
+  position: relative;
   padding-top: $header-height-small;
   @include transition(all 1s cubic-bezier(0.19, 1, 0.22, 1));
 
