@@ -77,9 +77,6 @@ module.exports.CategoryList = Backbone.View.extend({
       self.$el.append(itemView.el);
     });
   },
-  hideMenu: function(){
-    $('.sidebar').removeClass('is-visible');
-  },
   getMovies: function(category_name, category_title){
     var cache_key = category_name.replace('-', '_');
     var cache_response = localStorage.getItem(cache_key);
@@ -89,7 +86,9 @@ module.exports.CategoryList = Backbone.View.extend({
       cache_response = JSON.parse(cache_response);
 
       this.isTimestampExpired(cache_response, category_name);
+      UI.hideSideMenu();
     } else if (!cache_response && !navigator.onLine) {
+      $('.sidebar').removeClass('is-visible');
       UI.showPopup('You\'re offline', 'This movie category is not available in offline mode.');
     } else {
       // console.log('no cached');
@@ -97,10 +96,10 @@ module.exports.CategoryList = Backbone.View.extend({
       var movie_list = new View.MovieList({
         collection: movie_collection
       });
+      UI.hideSideMenu();
     }
 
     $('#header .title').html(category_title)
-    this.hideMenu();
   },
   isTimestampExpired: function(cache_response, category) {
     var TIMESTAMP_OFFSET = 30 * 60 * 1000;
@@ -173,25 +172,11 @@ module.exports.Header = Backbone.View.extend({
 
   },
   events: {
-    'click .btn.menu': 'showMenu',
-    'click .btn.search': 'showSearch'
+    'click .btn.menu': 'showSideMenu'
   },
-  showMenu: function(e) {
+  showSideMenu: function(e) {
     e.preventDefault();
-    var $sidebar = $('.sidebar');
-    var $overlay = $('.overlay');
-
-    if ($sidebar.hasClass('is-visible')) {
-      $sidebar.removeClass('is-visible');
-      $overlay.off('click', function(){
-        $sidebar.removeClass('is-visible');
-      });
-    } else {
-      $sidebar.addClass('is-visible');
-      $overlay.on('click', function(){
-        $sidebar.removeClass('is-visible');
-      });
-    }
+    UI.showSideMenu();
   }
 });
 

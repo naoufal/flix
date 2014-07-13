@@ -60,6 +60,25 @@ module.exports = new function(){
     $popup.removeClass('is-visible');
     $overlay.removeClass('is-visible');
   }
+
+  this.showSideMenu = function() {
+    var self = this;
+    var $sidebar = $('.sidebar');
+    var $overlay = $('.overlay');
+
+    $sidebar.addClass('is-visible');
+    $overlay.addClass('is-visible').on('click', function(){
+      self.hideSideMenu();
+    });
+  }
+
+  this.hideSideMenu = function() {
+    var $sidebar = $('.sidebar');
+    var $overlay = $('.overlay');
+
+    $sidebar.removeClass('is-visible');
+    $overlay.removeClass('is-visible').off();
+  }
 }
 //   $('#album-view').css({
 //    'transform': 'translate3d(' + ui.windowWidth() + ', 0, 0)'

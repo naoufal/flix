@@ -98,11 +98,6 @@ aside.sidebar {
   &.is-visible {
     display: inline-block;
     left: 0;
-    & + .overlay {
-      display: inline-block;
-      @include bgfade(#000, 0.5);
-      z-index: 99;
-    }
   }
 
   .category-list {
