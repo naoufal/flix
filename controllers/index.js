@@ -7,50 +7,87 @@ var nconf   = require('nconf');
 var redis   = require('../lib/init-redis');
 var debug   = require('debug')('cache');
 
-var BASE_URL = 'http://api.rottentomatoes.com/api/public/v1.0/lists/';
-var RT_KEY = nconf.get('ROTTENTOMATOES_KEY');
-
-
+var RT_URL = 'http://api.rottentomatoes.com/api/public/v1.0/lists/';
+var MDB_URL = 'http://api.themoviedb.org/3/movie/';
 
 var URL = {
-  in_theatres: BASE_URL + 'movies/in_theaters.json?apikey=',
-  box_office: BASE_URL + 'movies/box_office.json?apikey=',
-  new_releases: BASE_URL + 'dvds/new_releases.json?apikey=',
-  top_rentals: BASE_URL + 'dvds/top_rentals.json?apikey='
+  in_theatres: RT_URL + 'movies/in_theaters.json',
+  box_office: RT_URL + 'movies/box_office.json',
+  new_releases: RT_URL + 'dvds/new_releases.json',
+  top_rentals: RT_URL + 'dvds/top_rentals.json',
+  find_movie: function(id) {
+    return MDB_URL + id;
+  }
 }
 
 exports.in_theatres = function(req, res){
-  getResponse('in_theatres', function(err, movies) {
+  getRTResponse('in_theatres', function(err, movies) {
     if (err) return res.json({error: err});
     res.json({timestamp: new Date().getTime(), movies: movies});
   });
 };
 
 exports.box_office = function(req, res){
-  getResponse('box_office', function(err, movies) {
+  getRTResponse('box_office', function(err, movies) {
     if (err) return res.json({error: err});
     res.json({timestamp: new Date().getTime(), movies: movies});
   });
 };
 
 exports.new_releases = function(req, res){
-  getResponse('new_releases', function(err, movies) {
+  getRTResponse('new_releases', function(err, movies) {
     if (err) return res.json({error: err});
     res.json({timestamp: new Date().getTime(), movies: movies});
   });
 };
 
 exports.top_rentals = function(req, res){
-  getResponse('top_rentals', function(err, movies) {
+  getRTResponse('top_rentals', function(err, movies) {
     if (err) return res.json({error: err});
     res.json({timestamp: new Date().getTime(), movies: movies});
   });
 }
 
+exports.movie = function(req, res){
+  var id = req.params.id;
+  getMDBResponse(id, function(err, movie){
+    if (err) return res.json({error: err});
+    res.json({timestamp: new Date().getTime(), movie: movie});
+  })
+}
 
 
+var getMDBResponse = function(id, cb) {
+  Step(
+    function apiGet() {
+      var step = this;
+      request
+        .get(URL.find_movie(id))
+        .query({api_key: nconf.get('THEMOVIEDB_KEY')})
+        .end(function(err, response){
+          if (err) return cb(err);
+          response = response.body;
 
-var getResponse = function(category, cb) {
+          formatMDBResponse(response, function(err, movie){
+            if (err) return cb(err);
+            cb(null, movie);
+            step(null, movie);
+          });
+        });
+    },
+    function redisSet(err, response){
+      if (err) return cb(err);
+      /* TODO:
+          - fetch RT critics response concurrently
+          - add caching once front-end is implemented
+          - make video request after response is sent, so next people get video
+      */
+    }
+  );
+}
+
+
+var getRTResponse = function(category, cb) {
   Step(
     function redisGet() {
       redis.get('cache:' + category, this)
@@ -67,12 +104,13 @@ var getResponse = function(category, cb) {
     function apiGet() {
       var step = this;
       request
-        .get(URL[category] + nconf.get('ROTTENTOMATOES_KEY'))
+        .get(URL[category])
+        .query({apikey: nconf.get('ROTTENTOMATOES_KEY')})
         .end(function(err, response){
           if (err) return cb(err);
           response = JSON.parse(response.text);
 
-          formatMovieResponse(category, response, function(err, movies){
+          formatRTMovieResponse(category, response, function(err, movies){
             if (err) return cb(err);
             cb(null, movies)
             step(null, movies);
@@ -80,18 +118,55 @@ var getResponse = function(category, cb) {
         });
     },
     function redisSet(err, response){
+      /* TODO:
+          - set individual movies in cache.
+            - so we can pull rottenscore when movies endpoint is hit
+      */
       if (err) return cb(err);
       var response_string = JSON.stringify(response);
       redis.setex('cache:' + category, 60 * 60 * 3, response_string, this);
     },
     function redisError(err) {
       if (err) console.error(err);
-      debug('set (cache:' + category + ') in redis')
+      debug('set (cache:' + category + ') in redis');
     }
   );
 }
 
-var formatMovieResponse = function(category, response, cb) {
+var formatMDBResponse = function(response, cb) {
+  // TODO: pass rating
+  var genres = _.chain(response.genres)
+    .first(3)
+    .map(function(genre){
+      return genre.name;
+    })
+    .value()
+    .toString().replace(/,/g, ', ');
+  var spoken_languages = _.chain(response.spoken_languages)
+    .first(3)
+    .map(function(language){
+      return language.name;
+    })
+    .value()
+    .toString().replace(/,/g, ', ');
+
+  var movie = {
+    title: response.title,
+    genres: genres,
+    synopsis: response.overview,
+    release_date: response.release_date,
+    runtime: response.runtime,
+    banner_url: 'http://image.tmdb.org/t/p/w600' + response.backdrop_path,
+    poster_url: 'http://image.tmdb.org/t/p/w185' + response.poster_path,
+    // extras
+    original_title: response.original_title,
+    spoken_languages: spoken_languages
+  };
+
+  cb(null, movie);
+}
+
+var formatRTMovieResponse = function(category, response, cb) {
   var type;
   if (category == 'in_threatres' || category == 'box_office') {
     type = 'theater';
