@@ -18,6 +18,7 @@ module.exports = new function(){
       WINDOW_HEIGHT = $(window).height();
 
       self.initPopup();
+      self.initMovieView();
     }, 100)).resize();
   }
 
@@ -27,6 +28,15 @@ module.exports = new function(){
 
     $('.popup').css({
       'left': left_offset
+    })
+  }
+
+  this.initMovieView = function(){
+    $('.selected-movie').height(WINDOW_HEIGHT);
+
+    // TODO: consider moving this into a bb movie view.
+    $('.selected-movie .btn.left').on('click', function(){
+      $('.selected-movie').removeClass('is-visible');
     })
   }
 
