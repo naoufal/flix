@@ -72,7 +72,7 @@ var getResponse = function(category, cb) {
           if (err) return cb(err);
           response = JSON.parse(response.text);
 
-          formatMovieResponse(response, function(err, movies){
+          formatMovieResponse(category, response, function(err, movies){
             if (err) return cb(err);
             cb(null, movies)
             step(null, movies);
@@ -91,7 +91,14 @@ var getResponse = function(category, cb) {
   );
 }
 
-var formatMovieResponse = function(response, cb) {
+var formatMovieResponse = function(category, response, cb) {
+  var type;
+  if (category == 'in_threatres' || category == 'box_office') {
+    type = 'theater';
+  } else {
+    type = 'dvd';
+  }
+
   if (!response.movies) return cb( new Error('We\'re not currently able to get movies'))
   var movies = _.map(response.movies, function(movie){
     return {
@@ -103,7 +110,7 @@ var formatMovieResponse = function(response, cb) {
       year: movie.year,
       mpaa_rating: movie.mpaa_rating,
       runtime: movie.runtime,
-      releases_dates: movie.releases_dates,
+      release_date: movie.release_dates[type],
       cast: _.first(movie.abridged_cast, 3),
       synopsis: movie.synopsis,
       poster: movie.posters.thumbnail.replace('_tmb.jpg', '_det.jpg'),
