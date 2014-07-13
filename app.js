@@ -33,6 +33,7 @@ app.get('/api/category/in-theatres', controllers.in_theatres);
 app.get('/api/category/box-office', controllers.box_office);
 app.get('/api/category/new-releases', controllers.new_releases);
 app.get('/api/category/top-rentals', controllers.top_rentals);
+app.get('/api/movie/:id', controllers.movie);
 
 app.get('*', function(req, res){
   res.render('index');
