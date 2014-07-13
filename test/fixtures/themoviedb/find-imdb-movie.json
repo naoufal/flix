@@ -1,0 +1,78 @@
+{
+    "adult": false,
+    "backdrop_path": "/yQeEMjnBOIAtFqIuEphyesH0a6y.jpg",
+    "belongs_to_collection": {
+        "id": 2344,
+        "name": "The Matrix Collection",
+        "poster_path": "/lh4aGpd3U9rm9B8Oqr6CUgQLtZL.jpg",
+        "backdrop_path": "/bRm2DEgUiYciDw3myHuYFInD7la.jpg"
+    },
+    "budget": 63000000,
+    "genres": [
+        {
+            "id": 28,
+            "name": "Action"
+        },
+        {
+            "id": 12,
+            "name": "Adventure"
+        },
+        {
+            "id": 878,
+            "name": "Science Fiction"
+        },
+        {
+            "id": 53,
+            "name": "Thriller"
+        }
+    ],
+    "homepage": "http://www.warnerbros.com/movies/home-entertainment/the-matrix/37313ac7-9229-474d-a423-44b7a6bc1a54.html",
+    "id": 603,
+    "imdb_id": "tt0133093",
+    "original_title": "The Matrix",
+    "overview": "Thomas A. Anderson is a man living two lives. By day he is an average computer programmer and by night a malevolent hacker known as Neo, who finds himself targeted by the police when he is contacted by Morpheus, a legendary computer hacker, who reveals the shocking truth about our reality.",
+    "popularity": 13.055469479367,
+    "poster_path": "/gynBNzwyaHKtXqlEKKLioNkjKgN.jpg",
+    "production_companies": [
+        {
+            "name": "Silver Pictures",
+            "id": 1885
+        },
+        {
+            "name": "Warner Bros.",
+            "id": 6194
+        },
+        {
+            "name": "Village Roadshow Pictures",
+            "id": 79
+        },
+        {
+            "name": "Groucho II Film Partnership",
+            "id": 372
+        }
+    ],
+    "production_countries": [
+        {
+            "iso_3166_1": "AU",
+            "name": "Australia"
+        },
+        {
+            "iso_3166_1": "US",
+            "name": "United States of America"
+        }
+    ],
+    "release_date": "1999-03-30",
+    "revenue": 463517383,
+    "runtime": 136,
+    "spoken_languages": [
+        {
+            "iso_639_1": "en",
+            "name": "English"
+        }
+    ],
+    "status": "Released",
+    "tagline": "Welcome to the Real World.",
+    "title": "The Matrix",
+    "vote_average": 7.5,
+    "vote_count": 3740
+}

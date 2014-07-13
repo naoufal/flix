@@ -34,18 +34,17 @@ describe('Endpoints', function(){
   _.each(category_endpoints, function(endpoint){
     var endpoint_name = endpoint.replace('/api/category/', '');
     var endpoint_key = endpoint_name.replace('-', '_');
-
+    var fixture_dir = './fixtures/rottentomatoes/' + endpoint_name + '.json';
     describe(endpoint, function(){
       it('should return status code 200', function(done){
         nock(BASE_URL)
           .get(URL[endpoint_key])
-          .reply(200, require('./fixtures/' + endpoint_name + '.json'))
+          .reply(200, require(fixture_dir))
 
         request
           .get('/api/category/' + endpoint_name)
           .expect(200)
           .end(function(err, res){
-            // console.log(res.req)
             done();
           });
       });
@@ -53,7 +52,7 @@ describe('Endpoints', function(){
       it('should return a timestamp', function(done){
         nock(BASE_URL)
           .get(URL[endpoint_key])
-          .reply(200, require('./fixtures/' + endpoint_name + '.json'))
+          .reply(200, require(fixture_dir))
 
         request
           .get('/api/category/' + endpoint_name)
@@ -67,7 +66,7 @@ describe('Endpoints', function(){
       it('should return have a movies arrray', function(done){
         nock(BASE_URL)
           .get(URL[endpoint_key])
-          .reply(200, require('./fixtures/' + endpoint_name + '.json'))
+          .reply(200, require(fixture_dir))
 
         request
           .get('/api/category/' + endpoint_name)
