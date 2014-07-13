@@ -1,6 +1,7 @@
 var $        = require('jquery');
 var Backbone = require('backbone');
 var _        = require('lodash');
+var moment   = require('moment');
 require('history'); // There's surely a better way of doing this.
 
 module.exports.MovieList = Backbone.View.extend({
@@ -45,6 +46,16 @@ module.exports.MovieItem = Backbone.View.extend({
     var info = '<div class="movie-info">' + title + cast + '</div>';
     var html = '<a class="movie">' + poster + info + '</a>';
     $(this.el).attr('data-movie-cid', this.model.cid).append(html);
+  },
+  events: {
+    'click': 'showSelectedMovie'
+  },
+  showSelectedMovie: function(e){
+    $('.selected-movie').addClass('is-visible');
+    var selected_movie = new View.SelectedMovie({
+      model: this.model
+    });
+    selected_movie.render();
   }
 });
 
@@ -181,5 +192,34 @@ module.exports.Header = Backbone.View.extend({
         $sidebar.removeClass('is-visible');
       });
     }
+  }
+});
+
+
+
+module.exports.SelectedMovie = Backbone.View.extend({
+  el: '.selected-movie',
+  initialize: function() {
+    this.model.on('change', this.render, this);
+  },
+  render: function(){
+    var cast = _.map(this.model.get('cast'), function(actor){
+      return actor.name;
+    }).toString().replace(/,/g, ', ');
+
+    // track its a threatre or dvd
+    console.log(this.model.get('release_dates'))
+    var release_date = this.model.get('release_date');
+    var formatted_date = moment(release_date).format('MMMM D, YYYY');
+    var runtime = moment.duration(this.model.get('runtime'), 'minutes');
+    var formatted_runtime = runtime.hours() + 'h ' + runtime.minutes() + 'm';
+
+    // update values
+    $(this.el).find('.selected-movie__header').attr('style', 'background-image: url(' + this.model.get('poster') +')');
+    $(this.el).find('.selected-movie__header .title').text(this.model.get('title'));
+    $(this.el).find('.starring .fieldset__value').text(cast)
+    $(this.el).find('.synopsis .fieldset__value').text(this.model.get('synopsis'));
+    $(this.el).find('.release-date .fieldset__value').text(formatted_date);
+    $(this.el).find('.runtime .fieldset__value').text(formatted_runtime);
   }
 });
