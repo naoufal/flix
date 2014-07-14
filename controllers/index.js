@@ -59,6 +59,18 @@ exports.movie = function(req, res){
 
 var getMDBResponse = function(id, cb) {
   Step(
+    function redisGet() {
+      redis.get('cache:movie:' + id, this)
+    },
+    function redisReturn(err, movie) {
+      if (err) return cb(err);
+      if (movie) {
+        debug('got (cache:movie:' + id + ') from redis')
+        movie = JSON.parse(movie);
+        return cb(null, movie);
+      }
+      this();
+    },
     function apiGet() {
       var step = this;
       request
@@ -77,11 +89,19 @@ var getMDBResponse = function(id, cb) {
     },
     function redisSet(err, response){
       if (err) return cb(err);
+      var response_string = JSON.stringify(response);
+
+      // increase this cache count before pushing to prod
+      redis.setex('cache:movie:' + id, 60 * 60 * 3, response_string, this);
+
       /* TODO:
           - fetch RT critics response concurrently
-          - add caching once front-end is implemented
           - make video request after response is sent, so next people get video
       */
+    },
+    function redisError(err) {
+      if (err) console.error(err);
+      debug('set (cache:movie:' + id + ') in redis');
     }
   );
 }
