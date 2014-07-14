@@ -74,13 +74,11 @@ header#header {
 
 .content {
   position: relative;
-  padding-top: $header-height-small;
   overflow: hidden;
   @include transition(all 1s cubic-bezier(0.19, 1, 0.22, 1));
 
   @media #{$medium-up} {
     width: 740px;
-    padding-top: $header-height-medium;
     margin: 0 auto 0;
   }
 }

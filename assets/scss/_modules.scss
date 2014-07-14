@@ -5,11 +5,11 @@
   height: 100%;
   background: white;
   z-index: 1000;
-  @include transform(translate3d(1000px, -56px, 0));
+  @include transform(translate3d(1000px, 0, 0));
   @include transition(all 1s cubic-bezier(0.19, 1, 0.22, 1));
 
   &.is-visible {
-    @include transform(translate3d(0, -56px, 0));
+    @include transform(translate3d(0, 0, 0));
   }
 
   .selected-movie__header {
@@ -110,7 +110,6 @@
 // ---------- !ALERT ---------- \\
 .alert {
   position: fixed;
-  top: -10px;
   width: 100%;
   padding: 10px;
   height: 58px;
@@ -128,12 +127,8 @@
       top: 64px;
     }
 
-    & + .content {
+    & + .movie-list {
       padding-top: 56px + 58px;
-
-      @media #{$medium-up} {
-        padding-top: 64px + 58px;
-      }
     }
   }
   .title {
@@ -181,8 +176,14 @@
 // ---------- !LIST ---------- \\
 .movie-list {
   position: relative;
+  padding-top: $header-height-small;
+  // height: 100%;
   @include user-select(none);
   overflow: auto;
+
+  @media #{$medium-up} {
+    top: $header-height-medium;
+  }
 
   li {
     min-height: 76px;
@@ -190,17 +191,17 @@
     background-color: $white;
     list-style-type: none;
     opacity: 0;
-    @include transform(scale(1.2));
+    // @include transform(scale(1.2));
     @include transition(all 1s cubic-bezier(0.19, 1, 0.22, 1));
 
     &.is-visible {
       opacity: 1;
-      @include transform(none);
+      // @include transform(none);
     }
     &:active {
       background: #f1f1f1;
       border-radius: 2px;
-      @include transform(scale(1.02));
+      // @include transform(scale(1.02));
       @include box-shadow(0 0 3px rgba(0, 0, 0, 0.22));
       // z-index: 110;
     }

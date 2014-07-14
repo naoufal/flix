@@ -34,7 +34,9 @@ module.exports = new function(){
   }
 
   this.initMovieList = function(){
-    // $('.movie-list').height(WINDOW_HEIGHT);
+    console.log(WINDOW_HEIGHT - $('#header').height());
+    $('.content').height(WINDOW_HEIGHT);
+    $('.movie-list').height(WINDOW_HEIGHT);
   }
 
   this.initMovieView = function(){
@@ -42,14 +44,14 @@ module.exports = new function(){
 
     // TODO: consider moving this into a bb movie view.
     $('.selected-movie').css({
-      'transform': 'translate3d(' + WINDOW_WIDTH + 'px, -56px, 0)'
+      'transform': 'translate3d(' + WINDOW_WIDTH + 'px, 0, 0)'
     });
     $('.selected-movie .btn.left').on('click', function(){
       $('.overlay').removeClass('is-visible');
       $('.selected-movie')
         .removeClass('is-visible')
         .css({
-          'transform': 'translate3d(' + WINDOW_WIDTH + 'px, -56px, 0)'
+          'transform': 'translate3d(' + WINDOW_WIDTH + 'px, 0, 0)'
         });
     })
   }

@@ -55,9 +55,7 @@ module.exports.MovieItem = Backbone.View.extend({
     'click': 'showSelectedMovie'
   },
   showSelectedMovie: function(e){
-    $('.selected-movie').addClass('is-visible').css({
-      'transform': 'translateY(-56px)'
-    });
+    $('.selected-movie').addClass('is-visible').removeAttr('style');
 
     $('.overlay').addClass('is-visible');
     var imdb_id = 'tt' + this.model.get('ids').imdb;
