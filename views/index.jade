@@ -12,7 +12,7 @@ html
 body
   aside.sidebar
     header
-      h1 Flix
+      .title Flix
     ul.category-list
   header#header
     .btn.menu.left
@@ -22,9 +22,6 @@ body
     .btn.right
     h2.title In Theatres
   .content
-    .alert.offline
-      .title Offline Mode
-      .message Only categories and movies you've viewed are available.
     .selected-movie
       .selected-movie__header
         .title The LEGO Movie
@@ -47,8 +44,10 @@ body
         .fieldset.runtime
           .fieldset__label Runtime
           .fieldset__value 1h 20m
-
     ul.movie-list
+    .alert.offline
+      .title Offline Mode
+      .message Only categories and movies you've viewed are available.
   .overlay
     .overlay-content
       .popup

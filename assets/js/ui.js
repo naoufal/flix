@@ -36,7 +36,7 @@ module.exports = new function(){
   this.initMovieList = function(){
     console.log(WINDOW_HEIGHT - $('#header').height());
     $('.content').height(WINDOW_HEIGHT);
-    $('.movie-list').height(WINDOW_HEIGHT);
+    $('.movie-list').height(WINDOW_HEIGHT - $('#header').height());
   }
 
   this.initMovieView = function(){

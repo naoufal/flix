@@ -122,13 +122,8 @@
 
   &.is-visible {
     top: 56px;
-
     @media #{$medium-up} {
       top: 64px;
-    }
-
-    & + .movie-list {
-      padding-top: 56px + 58px;
     }
   }
   .title {
@@ -177,12 +172,11 @@
 .movie-list {
   position: relative;
   padding-top: $header-height-small;
-  // height: 100%;
   @include user-select(none);
   overflow: auto;
 
-  @media #{$medium-up} {
-    top: $header-height-medium;
+  &.is-offline {
+    padding-top: $header-height-small + 58px;
   }
 
   li {

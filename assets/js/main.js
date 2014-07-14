@@ -53,9 +53,11 @@ Flix = new function(){
     if (navigator.onLine) {
       self.config.isOnline = true;
       $('.offline').removeClass('is-visible');
+      $('.movie-list').removeClass('is-offline');
     } else {
       self.config.isOnline = false;
       $('.offline').addClass('is-visible');
+      $('.movie-list').addClass('is-offline');
     }
 
     setTimeout(function(){
