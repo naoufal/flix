@@ -21,6 +21,10 @@ module.exports.MovieList = Backbone.View.extend({
       setTimeout(function(){
         $('li[data-movie-cid="' + itemView.model.cid + '"]').addClass('is-visible');
       }, 60 * count);
+
+      $(itemView.el).find('img').load(function(){
+        $(itemView.el).addClass('is-loaded');
+      });
       count++;
     });
   }
@@ -224,6 +228,6 @@ module.exports.SelectedMovie = Backbone.View.extend({
       $('.selected-movie__header .img')
         .css('backgroundImage', 'url("' + banner_url + '")' )
         .addClass('is-visible')
-    });;
+    });
   }
 });
