@@ -98,10 +98,20 @@ aside.sidebar {
     display: inline-block;
     left: 0;
   }
-
+  header {
+    height: $header-height-small;
+    border-bottom: 1px solid #e0e0e0;
+    padding-left: 16px;
+    padding-right: 16px;
+    .title {
+      font-size: 20px;
+      line-height: $header-height-small;
+      color: $color-text-secondary;
+    }
+  }
   .category-list {
     li {
-      padding: 24px 15px 0;
+      padding: 24px 16px 0;
       color: rgb(51, 51, 51);
       font-size: 13px;
       font-weight: $font-weight-medium;
