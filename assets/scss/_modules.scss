@@ -1,24 +1,24 @@
 // ---------- !SELECTED MOVIE ---------- \\
 .selected-movie {
-  display: none;
   position: absolute;
-  top: 0;
   width: 100%;
   height: 100%;
   background: white;
   z-index: 1000;
+  @include transform(translate3d(1000px, -56px, 0));
+  @include transition(all 1s cubic-bezier(0.19, 1, 0.22, 1));
 
   &.is-visible {
-    display: inline;
+    @include transform(translate3d(0, -56px, 0));
   }
 
   .selected-movie__header {
     position: relative;
     width: 100%;
     height: 180px;
-    background: url('../images/placeholder-banner.jpg');
     background-size: cover;
-    // color: $white;
+    background-color: black;
+    overflow: hidden;
     z-index: 4;
 
     .title {
@@ -31,6 +31,29 @@
       color: white;
       font-size: 18px;
       font-weight: $font-weight-medium;
+    }
+
+    .img {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 180px;
+      border: 0;
+      background: red;
+      opacity: 0;
+      z-index: -1;
+
+      &.is-visible {
+        opacity: 1;
+        background: none;
+        background-size: cover;
+        @include transform(scale(1.05));
+        @include transition(all 1s cubic-bezier(0.19, 1, 0.22, 1));
+      }
+
+      img {
+        opacity: 0;
+      }
     }
 
     .btn {
@@ -159,6 +182,7 @@
 .movie-list {
   position: relative;
   @include user-select(none);
+  overflow: auto;
 
   li {
     padding: 8px 16px;

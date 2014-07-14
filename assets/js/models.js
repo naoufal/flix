@@ -9,6 +9,16 @@ module.exports.Movie = Backbone.Model.extend({
   }
 });
 
+module.exports.DetailedMovie = Backbone.Model.extend({
+  urlRoot: '/api/movie',
+  initialize: function(){
+    this.fetch({reset: true});
+  },
+  parse: function(response) {
+    return response.movie;
+  }
+});
+
 module.exports.Category = Backbone.Model.extend({
   defaults: {
     name: null,

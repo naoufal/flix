@@ -51,11 +51,21 @@ module.exports.MovieItem = Backbone.View.extend({
     'click': 'showSelectedMovie'
   },
   showSelectedMovie: function(e){
-    $('.selected-movie').addClass('is-visible');
-    var selected_movie = new View.SelectedMovie({
-      model: this.model
+    $('.selected-movie').addClass('is-visible').css({
+      'transform': 'translateY(-56px)'
     });
-    selected_movie.render();
+
+    $('.overlay').addClass('is-visible');
+    var imdb_id = 'tt' + this.model.get('ids').imdb;
+    var selected_movie = new Model.DetailedMovie({
+      id: imdb_id,
+      title: this.model.get('title'),
+      cast: this.model.get('cast'),
+      runtime: this.model.get('runtime')
+    });
+    var selected_movie_view = new View.SelectedMovie({
+      model: selected_movie
+    });
   }
 });
 
@@ -192,19 +202,28 @@ module.exports.SelectedMovie = Backbone.View.extend({
       return actor.name;
     }).toString().replace(/,/g, ', ');
 
-    // track its a threatre or dvd
-    console.log(this.model.get('release_dates'))
+    var banner_url = this.model.get('banner_url');
     var release_date = this.model.get('release_date');
     var formatted_date = moment(release_date).format('MMMM D, YYYY');
     var runtime = moment.duration(this.model.get('runtime'), 'minutes');
     var formatted_runtime = runtime.hours() + 'h ' + runtime.minutes() + 'm';
 
     // update values
-    $(this.el).find('.selected-movie__header').attr('style', 'background-image: url(' + this.model.get('poster') +')');
+
+    $('.selected-movie__header .img')
+      .removeClass('is-visible');
+
     $(this.el).find('.selected-movie__header .title').text(this.model.get('title'));
     $(this.el).find('.starring .fieldset__value').text(cast)
     $(this.el).find('.synopsis .fieldset__value').text(this.model.get('synopsis'));
     $(this.el).find('.release-date .fieldset__value').text(formatted_date);
     $(this.el).find('.runtime .fieldset__value').text(formatted_runtime);
+
+    // update background image
+    $(this.el).find('.selected-movie__header .img img').attr('src', banner_url).load(function(){
+      $('.selected-movie__header .img')
+        .css('backgroundImage', 'url("' + banner_url + '")' )
+        .addClass('is-visible')
+    });;
   }
 });
