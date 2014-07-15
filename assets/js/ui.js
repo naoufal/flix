@@ -20,6 +20,7 @@ module.exports = new function(){
       WINDOW_HEIGHT = $(window).height();
 
       self.initMovieList();
+      self.initMovieView();
       self.initPopup();
     }, 100)).resize();
   }
@@ -41,6 +42,7 @@ module.exports = new function(){
 
   this.initMovieView = function(){
     $('.selected-movie').height(WINDOW_HEIGHT);
+    $('.selected-movie__content').height(WINDOW_HEIGHT - $('.selected-movie__header').height());
 
     // TODO: consider moving this into a bb movie view.
     $('.selected-movie').css({
