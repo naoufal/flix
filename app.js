@@ -41,7 +41,7 @@ app.get('*', function(req, res){
 
 var port = nconf.get('PORT') || 8888;
 app.listen(port);
-console.log('\n-----> Running Flix on port ' + port);
+console.log('Running on port ' + port);
 
 module.exports.app = app;
 

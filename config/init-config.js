@@ -19,5 +19,3 @@ if (fs.existsSync( __dirname + '/local.js')){
     nconf.set(key, val);
   })
 }
-
-console.log('       Initializing config');
