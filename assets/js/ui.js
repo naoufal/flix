@@ -35,8 +35,11 @@ module.exports = new function(){
   }
 
   this.initMovieList = function(){
-    console.log(WINDOW_HEIGHT - $('#header').height());
     $('.content').height(WINDOW_HEIGHT);
+    if ($('.movie-list').hasClass('is-offline')) {
+      return $('.movie-list').height(WINDOW_HEIGHT - $('#header').height() - 58);
+    }
+
     $('.movie-list').height(WINDOW_HEIGHT - $('#header').height());
   }
 

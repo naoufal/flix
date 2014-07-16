@@ -60,6 +60,8 @@ Flix = new function(){
       $('.movie-list').addClass('is-offline');
     }
 
+    UI.initMovieList();
+
     setTimeout(function(){
       self.isUserOnline();
     }, 3000)
