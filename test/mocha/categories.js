@@ -1,7 +1,7 @@
-'use strict';
+// 'use strict';
 
 var nconf    = require('nconf');
-var app      = require('../app').app;
+var app      = require('../../app').app;
 var request  = require('supertest')(app);
 var should   = require('chai').should();
 var nock     = require('nock');
@@ -29,12 +29,13 @@ var category_endpoints = _.chain(app.routes.get)
   })
   .value();
 
-describe('Endpoints', function(){
+describe('Movie Category Endpoints', function(){
   // for each category endpoint
   _.each(category_endpoints, function(endpoint){
     var endpoint_name = endpoint.replace('/api/category/', '');
     var endpoint_key = endpoint_name.replace('-', '_');
-    var fixture_dir = './fixtures/rottentomatoes/' + endpoint_name + '.json';
+    var fixture_dir = '../fixtures/rottentomatoes/' + endpoint_name + '.json';
+
     describe(endpoint, function(){
       it('should return status code 200', function(done){
         nock(BASE_URL)
