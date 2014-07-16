@@ -50,15 +50,18 @@ Flix = new function(){
 
   // polls to see if user is offline and displays offline notification
   this.isUserOnline = function() {
-    if (navigator.onLine) {
-      self.config.isOnline = true;
-      $('.offline').removeClass('is-visible');
-      $('.movie-list').removeClass('is-offline');
-    } else {
-      self.config.isOnline = false;
-      $('.offline').addClass('is-visible');
-      $('.movie-list').addClass('is-offline');
-    }
+    $.get('http://foo.com')
+    // $.get('/api/user/online')
+      .success(function() {
+        self.config.isOnline = true;
+        $('.offline').removeClass('is-visible');
+        $('.movie-list').removeClass('is-offline');
+      })
+      .error(function() {
+        self.config.isOnline = false;
+        $('.offline').addClass('is-visible');
+        $('.movie-list').addClass('is-offline');
+      })
 
     UI.initMovieList();
 
@@ -69,7 +72,7 @@ Flix = new function(){
 
   // Global Variables
   this.config = {
-    isOnline: true
+    isOnline: false
   };
 
   // Private Functions

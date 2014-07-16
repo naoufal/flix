@@ -99,7 +99,7 @@ module.exports.CategoryList = Backbone.View.extend({
 
       this.isTimestampExpired(cache_response, category_name);
       UI.hideSideMenu();
-    } else if (!cache_response && !navigator.onLine) {
+    } else if (!cache_response && !Flix.config.isOnline) {
       $('.sidebar').removeClass('is-visible');
       UI.showPopup('You\'re offline', 'This movie category is not available in offline mode.');
     } else {
@@ -119,7 +119,7 @@ module.exports.CategoryList = Backbone.View.extend({
     var cached_is_expired = timestamp_diff > TIMESTAMP_OFFSET;
     var movie_collection;
 
-    if (cached_is_expired && navigator.onLine) {
+    if (cached_is_expired && Flix.config.isOnline) {
       movie_collection = new Collection.Movies({category: category});
       // console.log('old cache');
     } else {

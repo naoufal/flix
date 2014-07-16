@@ -34,6 +34,9 @@ app.get('/api/category/box-office', controllers.box_office);
 app.get('/api/category/new-releases', controllers.new_releases);
 app.get('/api/category/top-rentals', controllers.top_rentals);
 app.get('/api/movie/:id', controllers.movie);
+app.get('/api/user/online', function(req, res, next){
+  res.json({online: true});
+});
 
 app.get('*', function(req, res){
   res.render('index');
