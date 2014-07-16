@@ -45,9 +45,12 @@ module.exports = new function(){
     $('.selected-movie__content').height(WINDOW_HEIGHT - $('.selected-movie__header').height());
 
     // TODO: consider moving this into a bb movie view.
-    $('.selected-movie').css({
-      'transform': 'translate3d(' + WINDOW_WIDTH + 'px, 0, 0)'
-    });
+    if (!$('.selected-movie').hasClass('is-visible')) {
+      $('.selected-movie').css({
+        'transform': 'translate3d(' + WINDOW_WIDTH + 'px, 0, 0)'
+      });
+    }
+
     $('.selected-movie .btn.left').on('click', function(){
       $('.overlay').removeClass('is-visible');
       $('.selected-movie')
@@ -55,7 +58,7 @@ module.exports = new function(){
         .css({
           'transform': 'translate3d(' + WINDOW_WIDTH + 'px, 0, 0)'
         });
-    })
+    });
   }
 
   this.showPopup = function(title, string) {
