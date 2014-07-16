@@ -99,7 +99,7 @@ module.exports = function (grunt) {
 
     exec: {
       mocha_tests: 'NODE_ENV=test ./node_modules/.bin/mocha test/mocha/*.js',
-      casperjs_tests: 'NODE_ENV=test ./node_modules/.bin/casperjs test test/casperjs/*'
+      casperjs_tests: 'NODE_ENV=test node app & P=$!; ./node_modules/.bin/casperjs test test/casperjs/*; kill $P'
     }
 
   });
