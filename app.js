@@ -14,6 +14,9 @@ app.configure(function(){
   // Middleware
   app.use(function(req, res, next){
     res.locals.url = 'http://' + req.headers.host;
+    if (nconf.get('NODE_ENV') == 'development') {
+      res.setHeader('Access-Control-Allow-Origin', '*');
+    }
     next();
   });
   app.use('/', express.static(__dirname + '/public/'));
