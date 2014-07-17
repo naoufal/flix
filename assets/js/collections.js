@@ -2,15 +2,13 @@ var $        = require('jquery');
 var Backbone = require('backbone');
 var _        = require('lodash');
 
-var API_URL = 'http://127.0.0.1:5000';
-
 module.exports.Movies = Backbone.Collection.extend({
   model: Model.Movie,
   url: function(){
     var category;
 
     category = this.options.category;
-    return API_URL + '/api/category/' + category;
+    return '/api/category/' + category;
   },
   parse: function(response, xhr){
     if (response.error) return UI.showPopup('Something went wrong', response.error);
