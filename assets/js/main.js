@@ -50,8 +50,7 @@ Flix = new function(){
 
   // polls to see if user is offline and displays offline notification
   this.isUserOnline = function() {
-    $.get('http://foo.com')
-    // $.get('/api/user/online')
+    $.get('/api/user/online')
       .success(function() {
         self.config.isOnline = true;
         $('.offline').removeClass('is-visible');
