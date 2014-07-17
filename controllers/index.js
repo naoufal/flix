@@ -20,30 +20,34 @@ var URL = {
   }
 }
 
+
+/* TODO:
+  - Movie render/json method into middleware that handlers error handling.
+*/
 exports.in_theatres = function(req, res){
   getRTResponse('in_theatres', function(err, movies) {
-    if (err) return res.json({error: err});
+    if (err) return res.json({error: err.message});
     res.json({timestamp: new Date().getTime(), movies: movies});
   });
 };
 
 exports.box_office = function(req, res){
   getRTResponse('box_office', function(err, movies) {
-    if (err) return res.json({error: err});
+    if (err) return res.json({error: err.message});
     res.json({timestamp: new Date().getTime(), movies: movies});
   });
 };
 
 exports.new_releases = function(req, res){
   getRTResponse('new_releases', function(err, movies) {
-    if (err) return res.json({error: err});
+    if (err) return res.json({error: err.message});
     res.json({timestamp: new Date().getTime(), movies: movies});
   });
 };
 
 exports.top_rentals = function(req, res){
   getRTResponse('top_rentals', function(err, movies) {
-    if (err) return res.json({error: err});
+    if (err) return res.json({error: err.message});
     res.json({timestamp: new Date().getTime(), movies: movies});
   });
 }
@@ -51,7 +55,7 @@ exports.top_rentals = function(req, res){
 exports.movie = function(req, res){
   var id = req.params.id;
   getMDBResponse(id, function(err, movie){
-    if (err) return res.json({error: err});
+    if (err) return res.json({error: err.message});
     res.json({timestamp: new Date().getTime(), movie: movie});
   })
 }
@@ -77,7 +81,10 @@ var getMDBResponse = function(id, cb) {
         .get(URL.find_movie(id))
         .query({api_key: nconf.get('THEMOVIEDB_KEY')})
         .end(function(err, response){
-          if (err) return cb(err);
+          /* TODO: Add better error handling
+              - distinguish difference between Flix err, moviedb err
+          */
+          if (err) return cb(new Error('Could not fetch movies from source.  There may be problems with your Internet connection.'));
           response = response.body;
 
           formatMDBResponse(response, function(err, movie){
@@ -127,7 +134,10 @@ var getRTResponse = function(category, cb) {
         .get(URL[category])
         .query({apikey: nconf.get('ROTTENTOMATOES_KEY')})
         .end(function(err, response){
-          if (err) return cb(err);
+          /* TODO: Add better error handling
+              - distinguish difference between Flix err, RT err
+          */
+          if (err) return cb(new Error('Could not fetch movies from source.  There may be problems with your Internet connection.'));
           response = JSON.parse(response.text);
 
           formatRTMovieResponse(category, response, function(err, movies){
@@ -208,7 +218,7 @@ var formatRTMovieResponse = function(category, response, cb) {
       release_date: movie.release_dates[type],
       cast: _.first(movie.abridged_cast, 3),
       synopsis: movie.synopsis,
-      poster: movie.posters.thumbnail.replace('_tmb.jpg', '_det.jpg'),
+      poster: movie.posters.thumbnail.replace('_tmb.jpg', '_det.jpg').replace('_tmb.png', '_det.png'),
       ratings: {
         critics: movie.ratings.critics_score,
         audience: movie.ratings.audience_score
