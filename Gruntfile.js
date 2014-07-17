@@ -98,6 +98,7 @@ module.exports = function (grunt) {
     },
 
     exec: {
+      remove_screens: 'rm -rf ./test/screenshots',
       mocha_tests: 'NODE_ENV=test ./node_modules/.bin/mocha test/mocha/*.js',
       casperjs_tests: 'NODE_ENV=test node app & P=$!; ./node_modules/.bin/casperjs test test/casperjs/*; kill $P'
     }
@@ -107,7 +108,7 @@ module.exports = function (grunt) {
   // Task groups & aliases ///////////////////////////////////////
   grunt.registerTask('dev', ['build', 'concurrent']);
   grunt.registerTask('build', ['copy', 'browserify', 'sass']);
-  grunt.registerTask('test', ['test:mocha', 'test:casperjs']);
+  grunt.registerTask('test', ['exec:remove_screens', 'test:mocha', 'test:casperjs']);
   grunt.registerTask('test:mocha', ['exec:mocha_tests']);
-  grunt.registerTask('test:casperjs', ['exec:casperjs_tests']);
+  grunt.registerTask('test:casperjs', ['exec:remove_screens', 'exec:casperjs_tests']);
 }

@@ -8,3 +8,4 @@ assets/lib-bower/
 node_modules/
 public/
 temp/
+test/screenshots/
