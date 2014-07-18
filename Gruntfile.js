@@ -24,6 +24,11 @@ module.exports = function (grunt) {
         tasks: ['sass:dev'],
         spawn: false
       },
+      jade_handlebars: {
+        files: ['views/templates/**/*.jade'],
+        tasks: ['jade:handlebars', 'browserify'],
+        spawn: false
+      },
       compiled_js: {
         files: 'public/js/**/*.js',
         spawn: false,
@@ -70,6 +75,19 @@ module.exports = function (grunt) {
       }
     },
 
+    jade: {
+      handlebars: {
+        options: {
+          pretty: true
+        },
+        expand: true,
+        src: 'views/templates/**/*.jade',
+        dest: 'assets/templates',
+        ext: '.hbs',
+        flatten: true
+      }
+    },
+
     browserify: {
       bundle: {
         // A single entry point for our app
@@ -83,7 +101,7 @@ module.exports = function (grunt) {
       dev: {
         script: 'app.js',
         options: {
-          ignoredFiles: ['node_modules/**'],
+          ignore: ['node_modules/**', 'public/**', 'assets/**', 'test/**'],
           watchedExtensions: ['js']
         }
       }
@@ -107,7 +125,7 @@ module.exports = function (grunt) {
 
   // Task groups & aliases ///////////////////////////////////////
   grunt.registerTask('dev', ['build', 'concurrent']);
-  grunt.registerTask('build', ['copy', 'browserify', 'sass']);
+  grunt.registerTask('build', ['copy', 'browserify', 'sass', 'jade']);
   grunt.registerTask('test', ['exec:remove_screens', 'test:mocha', 'test:casperjs']);
   grunt.registerTask('test:mocha', ['exec:mocha_tests']);
   grunt.registerTask('test:casperjs', ['exec:remove_screens', 'exec:casperjs_tests']);
