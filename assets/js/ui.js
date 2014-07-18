@@ -5,7 +5,6 @@ var _        = require('lodash');
 
 module.exports = new function(){
   var self = this;
-  var WINDOW_WIDTH, WINDOW_HEIGHT;
 
   this.init = function(){
     self.initWindow();
@@ -16,8 +15,8 @@ module.exports = new function(){
 
   this.initWindow = function(){
     $(window).resize( _.throttle(function(){
-      WINDOW_WIDTH = $(window).width();
-      WINDOW_HEIGHT = $(window).height();
+      self.windowWidth = $(window).width();
+      self.windowHeight = $(window).height();
 
       self.initMovieList();
       self.initMovieView();
@@ -27,7 +26,7 @@ module.exports = new function(){
 
   this.initPopup = function() {
     var $popup = $('.popup');
-    var left_offset = (WINDOW_WIDTH - $popup.width() ) / 2;
+    var left_offset = (self.windowWidth - $popup.width() ) / 2;
 
     $('.popup').css({
       'left': left_offset
@@ -35,33 +34,17 @@ module.exports = new function(){
   }
 
   this.initMovieList = function(){
-    $('.content').height(WINDOW_HEIGHT);
+    $('.content').height(self.windowHeight);
     if ($('.movie-list').hasClass('is-offline')) {
-      return $('.movie-list').height(WINDOW_HEIGHT - $('#header').height() - 58);
+      return $('.movie-list').height(self.windowHeight - $('#header').height() - 58);
     }
 
-    $('.movie-list').height(WINDOW_HEIGHT - $('#header').height());
+    $('.movie-list').height(self.windowHeight - $('#header').height());
   }
 
   this.initMovieView = function(){
-    $('.selected-movie').height(WINDOW_HEIGHT);
-    $('.selected-movie__content').height(WINDOW_HEIGHT - $('.selected-movie__header').height());
-
-    // TODO: consider moving this into a bb movie view.
-    if (!$('.selected-movie').hasClass('is-visible')) {
-      $('.selected-movie').css({
-        'transform': 'translate3d(' + WINDOW_WIDTH + 'px, 0, 0)'
-      });
-    }
-
-    $('.selected-movie .btn.left').on('click', function(){
-      $('.overlay').removeClass('is-visible');
-      $('.selected-movie')
-        .removeClass('is-visible')
-        .css({
-          'transform': 'translate3d(' + WINDOW_WIDTH + 'px, 0, 0)'
-        });
-    });
+    $('.selected-movie').height(self.windowHeight);
+    $('.selected-movie__content').height(self.windowHeight - $('.selected-movie__header').height());
   }
 
   this.showPopup = function(title, string) {
@@ -103,4 +86,8 @@ module.exports = new function(){
     $sidebar.removeClass('is-visible');
     $overlay.removeClass('is-visible').off();
   }
+
+  // variables
+  this.windowWidth = $(window).width();
+  this.windowHeight = $(window).height();
 }
