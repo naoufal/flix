@@ -2,6 +2,7 @@ var $        = require('jquery');
 var Backbone = require('backbone');
 var _        = require('lodash');
 var moment   = require('moment');
+
 require('history'); // There's surely a better way of doing this.
 
 module.exports.MovieList = Backbone.View.extend({
@@ -38,18 +39,22 @@ module.exports.MovieItem = Backbone.View.extend({
     this.model.on('change', this.render, this);
   },
   render: function(){
-    var actors = _.map(this.model.get('cast'), function(actor){
+    var template = require("../templates/movie-list-item.hbs");
+
+    // format data
+    var formatted_cast = _.map(this.model.get('cast'), function(actor){
       return actor.name;
     }).toString().replace(/,/g, ', ')
 
-    $(this.el).empty();
-    var poster = '<div class="movie-poster"> <img src="' + this.model.get('poster') + '"> <div class="inset-shadow"></div></div>';
-    // var poster = '<img class="movie-poster" src="' + '">';
-    var title = '<div class="movie-title">' + this.model.get('title') + '</div>';
-    var cast = '<div class="movie-cast">' + actors + '</div>';
-    var info = '<div class="movie-info">' + title + cast + '</div>';
-    var html = '<a class="movie">' + poster + info + '</a>';
-    $(this.el).attr('data-movie-cid', this.model.cid).append(html);
+    // append data to template
+    $(this.el)
+      .attr('data-movie-cid', this.model.cid)
+      .append(template({
+        title: this.model.get('title'),
+        poster_url: this.model.get('poster'),
+        cast: formatted_cast
+      }));
+
   },
   events: {
     'click': 'showSelectedMovie'
@@ -200,32 +205,51 @@ module.exports.SelectedMovie = Backbone.View.extend({
     this.model.on('change', this.render, this);
   },
   render: function(){
-    var cast = _.map(this.model.get('cast'), function(actor){
+    $(this.el).empty();
+    var template = require("../templates/movie-info.hbs");
+
+    // setup data
+    var synopsis = this.model.get('synopsis');
+    var runtime = moment.duration(this.model.get('runtime'), 'minutes');
+    var formatted_runtime = runtime.hours() + 'h ' + runtime.minutes() + 'm';
+    var formatted_date = moment(this.model.get('release_date')).format('MMMM D, YYYY');
+    var formatted_cast = _.map(this.model.get('cast'), function(actor){
       return actor.name;
     }).toString().replace(/,/g, ', ');
 
-    var banner_url = this.model.get('banner_url');
-    var release_date = this.model.get('release_date');
-    var formatted_date = moment(release_date).format('MMMM D, YYYY');
-    var runtime = moment.duration(this.model.get('runtime'), 'minutes');
-    var formatted_runtime = runtime.hours() + 'h ' + runtime.minutes() + 'm';
+    // append data to template
+    $(this.el).append(template({
+      title: this.model.get('title'),
+      banner_url: this.model.get('banner_url'),
+      cast: formatted_cast,
+      synopsis: synopsis,
+      release_date: formatted_date,
+      runtime: formatted_runtime
+    }));
 
-    // update values
+    // hide empty attributes
+    if (formatted_cast == '') $('.starring', this.el).remove();
+    if (synopsis == '') $('.synopsis', this.el).remove();
+    if (formatted_date == 'January 1, 1970') $('.release-date', this.el).remove();
 
-    $('.selected-movie__header .img')
-      .removeClass('is-visible');
-
-    $(this.el).find('.selected-movie__header .title').text(this.model.get('title'));
-    $(this.el).find('.starring .fieldset__value').text(cast)
-    $(this.el).find('.synopsis .fieldset__value').text(this.model.get('synopsis'));
-    $(this.el).find('.release-date .fieldset__value').text(formatted_date);
-    $(this.el).find('.runtime .fieldset__value').text(formatted_runtime);
-
-    // update background image
-    $(this.el).find('.selected-movie__header .img img').attr('src', banner_url).load(function(){
+    // fade in background image
+    $(this.el).find('.selected-movie__header .img img').load(function(){
       $('.selected-movie__header .img')
-        .css('backgroundImage', 'url("' + banner_url + '")' )
+        .css('backgroundImage', 'url("' + $(this).attr('src') + '")' )
         .addClass('is-visible')
     });
+
+    // find back button
+    $(this.el).find('.btn.left').on('click', function(){
+      $('.overlay').removeClass('is-visible');
+      $('.selected-movie')
+        .removeClass('is-visible')
+        .css({
+          'transform': 'translate3d(' + UI.windowWidth + 'px, 0, 0)'
+        });
+    });
+
+    // fix movie content scroll
+    UI.initMovieView();
   }
 });
