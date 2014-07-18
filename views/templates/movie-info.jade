@@ -1,0 +1,21 @@
+.selected-movie__header
+  .title {{title}}
+  .btn.menu.left
+    .line_one
+    .line_two
+    .line_three
+  .img
+    img(src='{{banner_url}}')
+.selected-movie__content
+  .fieldset.starring
+    .fieldset__label Starring
+    .fieldset__value {{cast}}
+  .fieldset.synopsis
+    .fieldset__label Synopsis
+    .fieldset__value {{synopsis}}
+  .fieldset.release-date
+    .fieldset__label Release Date
+    .fieldset__value {{release_date}}
+  .fieldset.runtime
+    .fieldset__label Runtime
+    .fieldset__value {{runtime}}
