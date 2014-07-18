@@ -62,8 +62,7 @@ Flix = new function(){
         $('.movie-list').addClass('is-offline');
       })
 
-    UI.initMovieList();
-
+    console.log(self.config.isOnline);
     setTimeout(function(){
       self.isUserOnline();
     }, 3000)
@@ -71,7 +70,7 @@ Flix = new function(){
 
   // Global Variables
   this.config = {
-    isOnline: false
+    isOnline: true
   };
 
   // Private Functions
