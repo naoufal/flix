@@ -115,10 +115,20 @@ module.exports = function (grunt) {
       }
     },
 
+    /* TODO:
+      - write module that:
+        - checks if selenium is running.
+        - if not, runs it.
+        - polls to see when it's up;
+        - saves process id
+        - kills selenium with that process id
+    */
     exec: {
+      mkdir_screens: 'mkdir ./test/screenshots',
       remove_screens: 'rm -rf ./test/screenshots',
-      mocha_tests: 'NODE_ENV=test ./node_modules/.bin/mocha test/mocha/*.js',
-      casperjs_tests: 'NODE_ENV=test node app & P=$!; ./node_modules/.bin/casperjs test test/casperjs/*; kill $P'
+      open_screens: 'open ./test/screenshots',
+      run_tests: 'NODE_ENV=test ./node_modules/.bin/mocha',
+      launch_selenium: 'java -jar test/selenium-server-standalone-2.39.0.jar &'
     }
 
   });
@@ -126,7 +136,7 @@ module.exports = function (grunt) {
   // Task groups & aliases ///////////////////////////////////////
   grunt.registerTask('dev', ['build', 'concurrent']);
   grunt.registerTask('build', ['copy', 'browserify', 'sass', 'jade']);
-  grunt.registerTask('test', ['exec:remove_screens', 'test:mocha', 'test:casperjs']);
-  grunt.registerTask('test:mocha', ['exec:mocha_tests']);
-  grunt.registerTask('test:casperjs', ['exec:remove_screens', 'exec:casperjs_tests']);
+  grunt.registerTask('test', ['exec:remove_screens', 'exec:mkdir_screens', 'exec:run_tests']);
+  grunt.registerTask('test:screens', ['test', 'exec:open_screens']);
+  grunt.registerTask('sss', 'exec:launch_selenium');
 }
