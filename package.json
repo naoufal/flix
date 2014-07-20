@@ -57,7 +57,8 @@
     "load-grunt-tasks": "^0.6.0",
     "mocha": "^1.20.1",
     "nock": "^0.42.0",
-    "supertest": "^0.13.0"
+    "supertest": "^0.13.0",
+    "webdriverjs": "^1.7.1"
   },
   "browserify": {
     "transform": [
