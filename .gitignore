@@ -2,8 +2,9 @@
 .nodemonignore
 
 test.js
-config/local.js
+phantomjsdriver.log
 
+config/local.js
 assets/templates/
 assets/lib-bower/
 node_modules/
