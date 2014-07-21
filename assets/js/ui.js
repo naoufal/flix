@@ -50,10 +50,17 @@ module.exports = new function(){
   this.showPopup = function(title, string) {
     var $popup = $('.popup');
     var $overlay = $('.overlay');
+    var template = require("../templates/popup.hbs");
 
-    $popup.find('.popup-content h3').html(title);
-    $popup.find('.popup-content p').html(string);
-    $popup.addClass('is-visible');
+
+    // append data to template
+    $popup
+      .html(template({
+        title: title,
+        message: string
+      }))
+      .addClass('is-visible');
+
     $overlay.addClass('is-visible');
     $overlay.on('click', function(){
       self.hidePopup();
@@ -68,8 +75,31 @@ module.exports = new function(){
     $overlay.removeClass('is-visible');
   }
 
+  this.showAlert = function(title, string) {
+    var $alert = $('.alert');
+    var $movie_list = $('.movie-list');
+    var template = require("../templates/alert.hbs");
+
+    // append data to template
+    $alert
+      .html(template({
+        title: title,
+        message: string
+      }))
+      .addClass('is-visible');
+    $('.movie-list').addClass('is-offline');
+
+  }
+
+  this.hideAlert = function() {
+    var $alert = $('.alert');
+    var $movie_list = $('.movie-list');
+
+    $alert.removeClass('is-visible');
+    $movie_list.removeClass('is-offline');
+  }
+
   this.showSideMenu = function() {
-    var self = this;
     var $sidebar = $('.sidebar');
     var $overlay = $('.overlay');
 

@@ -30,6 +30,7 @@ Flix = new function(){
     self.initLayout();
     self.initHistory();
     self.isUserOnline();
+
   }
 
   this.initLayout = function() {
@@ -53,13 +54,11 @@ Flix = new function(){
     $.get('/api/user/online')
       .success(function() {
         self.config.isOnline = true;
-        $('.offline').removeClass('is-visible');
-        $('.movie-list').removeClass('is-offline');
+        UI.showAlert('Offline Mode', 'Only categories and movies you\'ve viewed are available.');
       })
       .error(function() {
         self.config.isOnline = false;
-        $('.offline').addClass('is-visible');
-        $('.movie-list').addClass('is-offline');
+        UI.hideAlert();
       })
 
     console.log(self.config.isOnline);
