@@ -127,8 +127,7 @@ module.exports = function (grunt) {
       mkdir_screens: 'mkdir ./test/screenshots',
       remove_screens: 'rm -rf ./test/screenshots',
       open_screens: 'open ./test/screenshots',
-      run_tests: 'NODE_ENV=test ./node_modules/.bin/mocha',
-      launch_selenium: 'java -jar test/selenium-server-standalone-2.39.0.jar &'
+      run_tests: 'NODE_ENV=test ./node_modules/.bin/se start && ./node_modules/.bin/mocha',
     }
 
   });
@@ -138,5 +137,4 @@ module.exports = function (grunt) {
   grunt.registerTask('build', ['copy', 'browserify', 'sass', 'jade']);
   grunt.registerTask('test', ['exec:remove_screens', 'exec:mkdir_screens', 'exec:run_tests']);
   grunt.registerTask('test:screens', ['test', 'exec:open_screens']);
-  grunt.registerTask('sss', 'exec:launch_selenium');
 }
