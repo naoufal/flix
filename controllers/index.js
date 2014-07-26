@@ -209,7 +209,7 @@ var formatRTMovieResponse = function(category, response, cb) {
     return {
       ids: {
         rottentomatoes: movie.id,
-        imdb: movie.alternate_ids.imdb
+        imdb: movie.alternate_ids ? movie.alternate_ids.imdb : null
       },
       title: movie.title,
       year: movie.year,
