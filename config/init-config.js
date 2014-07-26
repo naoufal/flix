@@ -3,8 +3,10 @@
 */
 
 var nconf = require('nconf');
-var fs = require('fs');
-var _ = require('lodash');
+var fs    = require('fs');
+var url   = require('url');
+var _     = require('lodash');
+
 
 nconf
   .use('memory') // store config in memory
@@ -19,3 +21,6 @@ if (fs.existsSync( __dirname + '/local.js')){
     nconf.set(key, val);
   })
 }
+
+// parse URL so to handle heroku's cloud url
+nconf.set('REDIS', url.parse(nconf.get('REDIS_URL')));
