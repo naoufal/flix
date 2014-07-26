@@ -134,7 +134,7 @@ module.exports = function (grunt) {
 
   // Task groups & aliases ///////////////////////////////////////
   grunt.registerTask('dev', ['build', 'concurrent']);
-  grunt.registerTask('build', ['copy', 'browserify', 'sass', 'jade']);
+  grunt.registerTask('build', ['copy', 'jade', 'browserify', 'sass']);
   grunt.registerTask('test', ['exec:remove_screens', 'exec:mkdir_screens', 'exec:run_tests']);
   grunt.registerTask('test:screens', ['test', 'exec:open_screens']);
 }
