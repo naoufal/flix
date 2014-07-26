@@ -6,7 +6,7 @@
   "scripts": {
     "start": "./node_modules/.bin/grunt dev",
     "test": "./node_modules/.bin/grunt test",
-    "postinstall": "./node_modules/.bin/bower install && ./node_modules/.bin/grunt build"
+    "postinstall": "./node_modules/.bin/bower bower cache clean && ./node_modules/.bin/bower install && ./node_modules/.bin/grunt build"
   },
   "engines": {
     "node": "0.10.28"
