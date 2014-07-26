@@ -3,8 +3,6 @@ var express = require('express');
 var app     = express();
 var nconf   = require('nconf');
 
-var controllers = require('./controllers');
-
 // Run initializers
 require('./lib/init-all');
 
@@ -28,6 +26,9 @@ app.configure(function(){
   app.use(express.cookieParser()); // parse cookies
   app.use(app.router);
 });
+
+// Controllers
+var controllers = require('./controllers');
 
 // Routes
 app.get('/', function(req, res){
