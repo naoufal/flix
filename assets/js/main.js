@@ -60,7 +60,6 @@ Flix = new function(){
         UI.showAlert('Offline Mode', 'Only categories and movies you\'ve viewed are available.');
       })
 
-    console.log(self.config.isOnline);
     setTimeout(function(){
       self.isUserOnline();
     }, 3000)
