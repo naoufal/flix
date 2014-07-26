@@ -1,4 +1,9 @@
 {
   "directory" : "assets/lib-bower",
+  "storage": {
+    "packages": "temp/.bower-cache",
+    "registry": "temp/.bower-registry"
+  },
+  "tmp": "temp/.bower-tmp",
   "analytics": false
 }

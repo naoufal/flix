@@ -3,6 +3,7 @@
 
 test.js
 phantomjsdriver.log
+npm-debug.log
 
 config/local.js
 assets/templates/
