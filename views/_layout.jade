@@ -6,10 +6,13 @@ html
     meta(charset='utf-8')
     meta(name='viewport', content='width=device-width, initial-scale=1, user-scalable=no')
     title page_title
+    if config.NODE_ENV != 'production'
+      meta(name='robots', content='noindex, nofollow')
     //- meta(name='description', content='')
     //- meta(name='keywords', content='')
     link(rel='stylesheet', href='/css/style.css')
-    script( type='text/javascript', src='http://localhost:35729/livereload.js')
+    if config.NODE_ENV == 'development'
+      script( type='text/javascript', src='http://localhost:35729/livereload.js')
     script(src='/js/bundle.js')
 body
   block header
@@ -20,7 +23,7 @@ body
         .line_three
       .btn.right
       //- switch to h1 if in movie category.
-      h2.title page_title
+      h2.title= page_title
   block content
   block sidebar
     aside.sidebar

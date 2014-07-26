@@ -5,12 +5,14 @@ var nconf   = require('nconf');
 
 var controllers = require('./controllers');
 
-
 // Run initializers
 require('./lib/init-all');
 
 // Configuration
 app.configure(function(){
+  app.locals.config = {};
+  app.locals.config.NODE_ENV = nconf.get('NODE_ENV');
+
   // Middleware
   app.use(function(req, res, next){
     res.locals.url = 'http://' + req.headers.host;
