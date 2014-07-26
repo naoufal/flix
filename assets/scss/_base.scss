@@ -17,12 +17,16 @@
   margin: 0;
 }
 html {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
   -webkit-text-size-adjust: 100%;
 }
 
 body {
   position: relative;
-  -webkit-animation: bugfix infinite 1s;
+  height: 100%;
+  width: 100%;
   background-color: $off-white;
   font: {
     family: $font-family;
@@ -30,6 +34,8 @@ body {
     weight: $font-weight-regular;
   }
   line-height: 1.5em;
+  overflow: auto;
+  -webkit-animation: bugfix infinite 1s;
 }
 
 html, body {

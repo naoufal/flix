@@ -97,6 +97,7 @@
   .selected-movie__content {
     padding: 16px;
     overflow: auto;
+    -webkit-overflow-scrolling: touch;
   }
   .fieldset {
     margin-bottom: 16px;
