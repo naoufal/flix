@@ -186,6 +186,7 @@
   padding-top: $header-height-small;
   @include user-select(none);
   overflow: auto;
+  -webkit-overflow-scrolling: touch;
 
   &.is-offline {
     padding-top: $header-height-small + 58px;
@@ -241,12 +242,14 @@
       border-radius: 2px;
       @media #{$small-only} {
         background: #f1f1f1;
-        @include transform(scale(1.02));
+        // enable for non-touch after setting up modernizr
+        // @include transform(scale(1.02));
         @include box-shadow(0 0 3px rgba(0, 0, 0, 0.22));
       }
       @media #{$medium-up} {
         .movie-poster {
-          @include transform(scale(1.05) !important);
+          // enable for non-touch after setting up modernizr
+          // @include transform(scale(1.05) !important);
           @include box-shadow(0 2px 5px rgba(0, 0, 0, 0.26));
         }
       }

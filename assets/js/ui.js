@@ -1,7 +1,7 @@
-var $        = require('jquery');
-var ui       = require('./ui');
-var _        = require('lodash');
-
+var $         = require('jquery');
+var ui        = require('./ui');
+var _         = require('lodash');
+var FastClick = require('fastclick');
 
 module.exports = new function(){
   var self = this;
@@ -11,6 +11,7 @@ module.exports = new function(){
     self.initMovieList();
     self.initPopup();
     self.initMovieView();
+    FastClick(document.body);
   }
 
   this.initWindow = function(){
