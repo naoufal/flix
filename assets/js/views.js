@@ -13,7 +13,8 @@ module.exports.MovieList = Backbone.View.extend({
   },
   render: function(){
     var self = this;
-    self.$el.empty();
+    self.$el.empty().scrollTop(0);
+
     var count = 0;
     _.each(this.collection.models, function(movie) {
       var itemView = new View.MovieItem({model: movie});

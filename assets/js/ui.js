@@ -35,11 +35,18 @@ module.exports = new function(){
 
   this.initMovieList = function(){
     $('.content').height(self.windowHeight);
+
     if ($('.movie-list').hasClass('is-offline')) {
       return $('.movie-list').height(self.windowHeight - $('#header').height() - 58);
     }
 
-    $('.movie-list').height(self.windowHeight - $('#header').height());
+    // handles bottom padding on medium/large
+    if (self.windowWidth <= 640 ) {
+      $('.movie-list').height(self.windowHeight - $('#header').height());
+    } else {
+      $('.movie-list').height(self.windowHeight - $('#header').height() - 27);
+    }
+
   }
 
   this.initMovieView = function(){

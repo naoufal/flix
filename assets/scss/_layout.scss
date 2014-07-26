@@ -5,9 +5,6 @@
 
 // ---------- !CORE ---------- \\
 
-$header-height-small: 56px;
-$header-height-medium: 64px;
-
 header#header {
   position: fixed;
   width: 100%;
@@ -19,6 +16,10 @@ header#header {
   @media #{$medium-up} {
     height: $header-height-medium;
     padding: 0 16px;
+  }
+
+  @media #{$large-up} {
+    padding-left: $sidebar-width;
   }
 
   h2.title {
@@ -34,6 +35,10 @@ header#header {
       line-height: $header-height-medium;
       font-size: 24px;
     }
+    @media #{$large-up} {
+      left: 27px;
+      padding-left: $sidebar-width;
+    }
   }
 
   .btn {
@@ -46,6 +51,10 @@ header#header {
     @media #{$medium-up} {
       padding: 0 6px;
       margin: 8px 0;
+    }
+
+    @media #{$large-up} {
+      display: none;
     }
 
 
@@ -75,25 +84,31 @@ header#header {
 .content {
   position: relative;
   overflow: hidden;
-  @include transition(all 1s cubic-bezier(0.19, 1, 0.22, 1));
 
   @media #{$medium-up} {
-    width: 740px;
-    margin: 0 auto 0;
+    // padding-left: 27px;
+  }
+  @media #{$large-up} {
+    padding-left: $sidebar-width;
   }
 }
 
 aside.sidebar {
   position: fixed;
   top: 0;
-  left: -240px;
-  width: 240px;
+  left: -$sidebar-width;
+  width: $sidebar-width;
   height: 100%;
   background: #fff;
   z-index: 100;
   @include transition (all 0.3s cubic-bezier(.4,0,.2,1) 0.1s);
   @include user-select(none);
 
+  @media #{$large-up} {
+    display: inline-block;
+    left: 0;
+    @include box-shadow(0 2px 5px rgba(0, 0, 0, 0.26));
+  }
   &.is-visible {
     display: inline-block;
     left: 0;
@@ -103,10 +118,19 @@ aside.sidebar {
     border-bottom: 1px solid #e0e0e0;
     padding-left: 16px;
     padding-right: 16px;
+
+    @media #{$medium-up} {
+      height: $header-height-medium;
+    }
     .title {
       font-size: 20px;
       line-height: $header-height-small;
       color: $color-text-secondary;
+
+      @media #{$medium-up} {
+        font-size: 24px;
+        line-height: $header-height-medium;
+      }
     }
   }
   .category-list {

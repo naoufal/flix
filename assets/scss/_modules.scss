@@ -11,6 +11,9 @@
   &.is-visible {
     @include transform(translate3d(0, 0, 0));
   }
+  @media #{$medium-up} {
+    display: none;
+  }
 
   .selected-movie__header {
     position: relative;
@@ -48,7 +51,7 @@
         background: none;
         background-size: cover;
         @include transform(scale(1.05));
-        @include transition(all 1s cubic-bezier(0.19, 1, 0.22, 1));
+        @include transition(opacity 1s cubic-bezier(0.19, 1, 0.22, 1));
       }
 
       img {
@@ -111,6 +114,7 @@
 // ---------- !ALERT ---------- \\
 .alert {
   position: fixed;
+  left: 0;
   width: 100%;
   padding: 10px;
   height: 58px;
@@ -120,6 +124,10 @@
   @include box-shadow(0 2px 5px rgba(0, 0, 0, 0.26));
   @include transition(all 1s cubic-bezier(0.19, 1, 0.22, 1));
   z-index: 3;
+
+  @media #{$large-up} {
+    padding-left: ($sidebar-width + 10px);
+  }
 
   &.is-visible {
     top: 56px;
@@ -183,33 +191,68 @@
     padding-top: $header-height-small + 58px;
   }
 
+  @media #{$medium-up} {
+    padding-top: $header-height-medium + 27px;
+    padding-left: 27px;
+  }
+
   li {
-    min-height: 76px;
-    padding: 8px 16px;
-    background-color: $white;
+    @include micro-clearfix;
     list-style-type: none;
     opacity: 0;
-    // @include transform(scale(1.2));
-    @include transition(all 1s cubic-bezier(0.19, 1, 0.22, 1));
+    @include transition(opacity 1s cubic-bezier(0.19, 1, 0.22, 1), transform 1s cubic-bezier(0.19, 1, 0.22, 1));
+
+    @media #{$small-only} {
+      min-height: 76px;
+      padding: 8px 16px;
+      background-color: $white;
+
+    }
+
+    @media #{$medium-only} {
+      float: left;
+      width: 25%;
+      padding: 0;
+      margin-bottom: 27px;
+
+      padding-right: 27px;
+      &:nth-child(4n) {
+        margin-right: 0;
+      }
+    }
+
+    @media #{$large-up} {
+      float: left;
+      width: 20%;
+      padding: 0;
+      margin-bottom: 27px;
+
+      padding-right: 27px;
+
+      &:nth-child(6n) {
+        margin-right: 0;
+      }
+    }
 
     &.is-visible {
       opacity: 1;
-      // @include transform(none);
     }
     &:active {
-      background: #f1f1f1;
       border-radius: 2px;
-      // @include transform(scale(1.02));
-      @include box-shadow(0 0 3px rgba(0, 0, 0, 0.22));
-      // z-index: 110;
+      @media #{$small-only} {
+        background: #f1f1f1;
+        @include transform(scale(1.02));
+        @include box-shadow(0 0 3px rgba(0, 0, 0, 0.22));
+      }
+      @media #{$medium-up} {
+        .movie-poster {
+          @include transform(scale(1.05) !important);
+          @include box-shadow(0 2px 5px rgba(0, 0, 0, 0.26));
+        }
+      }
     }
 
     &.is-selected {
-      // z-index: 1000;
-      // height: 400px;
-      // background-color: red;
-      // @include transform(scale(1.02));
-      // @include transition(all 2s ease);
     }
 
     &.is-loaded {
@@ -221,24 +264,47 @@
   }
 
   a.movie {
+    display: block;
     @include micro-clearfix;
-    height: 50px;
+
+    @media #{$small-only} {
+      height: 60px;
+    }
   }
 
   .movie-poster {
-    position: absolute;
-    width: 40px;
-    height: 60px;
-    background: black;
+    opacity: 0;
     overflow: hidden;
     border-radius: 2px;
-    opacity: 0;
-    @include transition(all 2s cubic-bezier(0.19, 1, 0.22, 1));
+
+    @media #{$small-only} {
+      position: absolute;
+      width: 40px;
+      height: 60px;
+      @include transition(opacity 2s cubic-bezier(0.19, 1, 0.22, 1));
+    }
+
+    @media #{$medium-up} {
+      position: relative;
+      float: left;
+      width: 100%;
+      padding-bottom: 150%;
+      @include transition(transform 1s cubic-bezier(0.19, 1, 0.22, 1));
+    }
+
+    @media #{$large-up} {
+      // max-height: 185px;
+    }
 
     img {
       position: absolute;
       width: 100%;
       height: 100%;
+
+      @media #{$medium-up} {
+        top: 0;
+        left: 0;
+      }
     }
 
     .inset-shadow {
@@ -247,16 +313,32 @@
       height: 100%;
       @include box-shadow(inset 0 0 0 1px rgba(0,0,0,.08));
       z-index: 2;
+
+      @media #{$medium-up} {
+        top: 0;
+      }
     }
   }
 
   .movie-info {
     width: 100%;
-    padding-left: 56px;
+    @media #{$small-only} {
+      padding-left: 56px;
+    }
+
+    @media #{$medium-up} {
+      float: left;
+      padding-top: 10px;
+      min-height: 70px;
+    }
   }
   .movie-title {
     color: $color-text-primary;
     font-size: 14px;
+
+    @media #{$medium-up} {
+      // font-size: 12px;
+    }
   }
   .movie-cast {
     color: $color-text-secondary;
