@@ -115,14 +115,13 @@ module.exports = function (grunt) {
       }
     },
 
-    /* TODO:
-      - write module that:
-        - checks if selenium is running.
-        - if not, runs it.
-        - polls to see when it's up;
-        - saves process id
-        - kills selenium with that process id
-    */
+    eslint: {
+      options: {
+        config: 'config/eslint/' + (ENV == 'development' ? 'development' : 'production') + '.json'
+      },
+      target: ['assets/js/**/*.js']
+    },
+
     exec: {
       mkdir_screens: 'mkdir ./test/screenshots',
       remove_screens: 'rm -rf ./test/screenshots',
@@ -134,7 +133,7 @@ module.exports = function (grunt) {
 
   // Task groups & aliases ///////////////////////////////////////
   grunt.registerTask('dev', ['build', 'concurrent']);
-  grunt.registerTask('build', ['copy', 'jade', 'browserify', 'sass']);
+  grunt.registerTask('build', ['copy', 'jade', 'browserify', 'sass', 'eslint']);
   grunt.registerTask('test', ['exec:remove_screens', 'exec:mkdir_screens', 'exec:run_tests']);
   grunt.registerTask('test:screens', ['test', 'exec:open_screens']);
 }
