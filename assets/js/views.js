@@ -156,6 +156,8 @@ module.exports.CategoryItem = Backbone.View.extend({
     'click .category': 'selectCategory'
   },
   selectCategory: function(e) {
+    $('.selected-movie').removeClass('is-visible');
+
     e.preventDefault();
     var collection = this.model.collection;
     var self = this;
@@ -222,6 +224,7 @@ module.exports.SelectedMovie = Backbone.View.extend({
     $(this.el).append(template({
       title: this.model.get('title'),
       banner_url: this.model.get('banner_url'),
+      poster_url: this.model.get('poster_url'),
       cast: formatted_cast,
       synopsis: synopsis,
       release_date: formatted_date,

@@ -4,7 +4,7 @@
   width: 100%;
   height: 100%;
   background: white;
-  z-index: 1000;
+  z-index: 100;
   @include transform(translate3d(1000px, 0, 0));
   @include transition(all 1s cubic-bezier(0.19, 1, 0.22, 1));
 
@@ -12,17 +12,29 @@
     @include transform(translate3d(0, 0, 0));
   }
   @media #{$medium-up} {
-    display: none;
+    // display: none;
   }
 
+
+  $small-banner-height: 180px;
+  $medium-banner-height: 240px;
+  $large-banner-height: 320px;
   .selected-movie__header {
     position: relative;
     width: 100%;
-    height: 180px;
+    height: $small-banner-height;
     background-size: cover;
     background-color: black;
     overflow: hidden;
     z-index: 4;
+
+    @media #{$medium-up} {
+      height: $medium-banner-height;
+    }
+
+    @media #{$large-up} {
+      height: $large-banner-height;
+    }
 
     .title {
       position: absolute;
@@ -34,17 +46,31 @@
       color: white;
       font-size: 18px;
       font-weight: $font-weight-medium;
+
+      @media #{$medium-up} {
+        // padding: 16px 27px;
+        font-size: 24px;
+        padding-left: 212px + 27px;
+      }
     }
 
     .img {
       position: absolute;
       left: 0;
       width: 100%;
-      height: 180px;
+      height: $small-banner-height;
       border: 0;
       background: red;
       opacity: 0;
       z-index: -1;
+
+      @media #{$medium-up} {
+        height: $medium-banner-height;
+      }
+
+      @media #{$large-up} {
+        height: $large-banner-height;
+      }
 
       &.is-visible {
         opacity: 1;
@@ -74,6 +100,9 @@
 
       &.menu {
         padding: 16px 12px;
+        @media #{$medium-up} {
+          padding-left: 27px;
+        }
 
         .line, .line_one, .line_two, .line_three {
           width: 18px;
@@ -94,20 +123,59 @@
       }
     }
   }
+  aside.selected-movie__sidebar {
+    @media #{$small-only} {
+      display: none;
+    }
+
+    @media #{$medium-up} {
+      position: absolute;
+      padding-left: 27px;
+      margin-top: -108px;
+      z-index: 5000;
+    }
+    // factor out into module
+    .movie-poster {
+      @include box-shadow(0 2px 5px rgba(0, 0, 0, 0.26));
+      border-radius: 2px;
+      overflow: hidden;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
   .selected-movie__content {
     padding: 16px;
     overflow: auto;
     -webkit-overflow-scrolling: touch;
+
+    @media #{$medium-up} {
+      padding-left: 27px;
+      margin-left: 212px;
+    }
   }
   .fieldset {
     margin-bottom: 16px;
     .fieldset__label {
       margin-bottom: 2px;
       color: $color-text-primary;
+
+      @media #{$medium-up} {
+        font-size: 16px;
+      }
     }
     .fieldset__value {
       color: $color-text-secondary;
       font-size: 12px;
+      line-height: 1.8em;
+
+      @media #{$medium-up} {
+        font-size: 14px;
+      }
     }
   }
 }
@@ -276,6 +344,7 @@
     }
   }
 
+  // factor out into module
   .movie-poster {
     opacity: 0;
     overflow: hidden;
@@ -293,6 +362,7 @@
       float: left;
       width: 100%;
       padding-bottom: 150%;
+      @include box-shadow(0 2px 5px rgba(0, 0, 0, 0.26));
       @include transition(transform 1s cubic-bezier(0.19, 1, 0.22, 1));
     }
 
@@ -319,6 +389,7 @@
       z-index: 2;
 
       @media #{$medium-up} {
+        display: none;
         top: 0;
       }
     }
@@ -498,3 +569,4 @@
 .text-uppercase {
   text-transform: uppercase;
 }
+
