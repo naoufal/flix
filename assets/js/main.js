@@ -10,7 +10,6 @@ Collection   = require('./collections');
 View         = require('./views');
 UI           = require('./ui');
 
-
 $(function(){
   Flix.init();
   UI.init();
@@ -44,7 +43,7 @@ Flix = new function(){
   this.initHistory = function() {
     History.Adapter.bind(window,'statechange',function(){ // Note: We are using statechange instead of popstate
       var State = History.getState(); // Note: We are using History.getState() instead of event.state
-      console.log(State);
+      // console.log(State);
     });
   }
 
@@ -78,4 +77,3 @@ Flix = new function(){
     category_list.getMovies(initial_category.name, initial_category.title);
   }
 }
-

@@ -17,7 +17,7 @@ module.exports = function (grunt) {
       js: {
         files: 'assets/js/**/*.js',
         spawn: false,
-        tasks: 'browserify'
+        tasks: ['browserify', 'eslint']
       },
       sass: {
         files: ['assets/scss/**/*.{scss,sass}'],
