@@ -1,9 +1,14 @@
+block variables
+  - var page_title = ''
+  - var page_description = ''
+  - var page_keywords = ''
+
 doctype html
 html
   head
     meta(charset='utf-8')
     meta(name='viewport', content='width=device-width, initial-scale=1, user-scalable=no')
-    title= page_title + ' | Flix'
+    title= page_title + ' - Flix'
     if config.NODE_ENV != 'development'
       meta(name='robots', content='noindex, nofollow')
     meta(name='description', content=page_description)
