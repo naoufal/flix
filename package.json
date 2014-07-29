@@ -31,7 +31,7 @@
     "grunt-contrib-handlebars": "^0.8.0",
     "grunt-contrib-jade": "^0.12.0",
     "grunt-eslint": "^0.6.0",
-    "grunt-modernizr": "^0.5.2",
+    "grunt-modernizr": "~0.4.1",
     "grunt-sass": "^0.14.0",
     "handlebars": "~1.3.0",
     "hbsfy": "^1.3.2",
@@ -67,7 +67,9 @@
     ]
   },
   "browser": {
-    "history": "./assets/lib-bower/history.js/scripts/bundled-uncompressed/html4+html5/jquery.history.js"
+    "history": "./assets/lib-bower/history.js/scripts/bundled-uncompressed/html4+html5/jquery.history.js",
+    "modernizr-dev": "./assets/lib/modernizr/modernizr-dev.js",
+    "modernizr-prod": "./assets/lib/modernizr/modernizr-auto.js"
   },
   "browserify-shim": {
     "history": {
@@ -75,6 +77,12 @@
       "depends": [
         "jquery:jQuery"
       ]
+    },
+    "modernizr-dev": {
+      "exports": "modernizr"
+    },
+    "modernizr-prod": {
+      "exports": "modernizr"
     }
   }
 }

@@ -2,7 +2,13 @@ var $        = require('jquery');
 var Backbone = require('backbone');
 var _        = require('lodash');
 Backbone.$   = $;
+var Modernizr;
 
+if ( location.hostname == 'localhost' ){
+  Modernizr = require('modernizr-dev');
+} else {
+  Modernizr = require('modernizr-prod');
+}
 
 // Backbone
 Model        = require('./models');

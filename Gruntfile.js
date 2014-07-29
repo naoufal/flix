@@ -57,6 +57,35 @@ module.exports = function (grunt) {
       }
     },
 
+    modernizr: {
+      devFile : "assets/lib/modernizr/modernizr-dev.js",
+      outputFile : "assets/lib/modernizr/modernizr-auto.js",
+      // Based on default settings on http://modernizr.com/download/
+      extra : {
+        shiv : false,
+        printshiv : false,
+        load : true,
+        mq : true,
+        cssclasses : true
+      },
+      // Based on default settings on http://modernizr.com/download/
+      extensibility : {
+        addtest : true,
+        prefixed : false,
+        teststyles : false,
+        testprops : false,
+        testallprops : false,
+        hasevents : false,
+        prefixes : false,
+        domprefixes : false
+      },
+      uglify : false,
+      tests : [],  // Define any tests you want to implicitly include.
+      parseFiles : true,
+      files : ['assets/js/**/*.js', 'assets/scss/**/*.scss'],
+      customTests : ['assets/lib/modernizr/modernizr-tests.js']
+    },
+
     sass: {
       dev: {
         options: {
@@ -133,7 +162,7 @@ module.exports = function (grunt) {
 
   // Task groups & aliases ///////////////////////////////////////
   grunt.registerTask('dev', ['build', 'concurrent']);
-  grunt.registerTask('build', ['copy', 'jade', 'browserify', 'sass', 'eslint']);
+  grunt.registerTask('build', ['modernizr', 'copy', 'jade', 'browserify', 'sass', 'eslint']);
   grunt.registerTask('test', ['exec:remove_screens', 'exec:mkdir_screens', 'exec:run_tests']);
   grunt.registerTask('test:screens', ['test', 'exec:open_screens']);
 }
