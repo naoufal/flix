@@ -1,15 +1,13 @@
-- var page_title = page_title;
-
 doctype html
 html
   head
     meta(charset='utf-8')
     meta(name='viewport', content='width=device-width, initial-scale=1, user-scalable=no')
-    title= page_title
-    if config.NODE_ENV != 'production'
+    title= page_title + ' | Flix'
+    if config.NODE_ENV != 'development'
       meta(name='robots', content='noindex, nofollow')
-    //- meta(name='description', content='')
-    //- meta(name='keywords', content='')
+    meta(name='description', content=page_description)
+    meta(name='keywords', content=page_keywords)
     link(rel='stylesheet', href='/css/style.css')
     if config.NODE_ENV == 'development'
       script( type='text/javascript', src='http://localhost:35729/livereload.js')
@@ -30,3 +28,8 @@ body
       header
         .title Flix
       ul.category-list
+        li
+          a.category(href='/in-theatres') In Theatres
+          a.category(href='/box-office') Box Office
+          a.category(href='/new-releases') New Releases
+          a.category(href='/top-rentals') Top Rentals

@@ -1,0 +1,22 @@
+mixin MovieListItem(movie)
+  li.is-visible.is-loaded
+    a.movie(href='/movie/' + movie.ids.imdb)
+      .movie-poster
+        img(src=movie.poster)
+        .inset-shadow
+      .movie-info
+        .movie-title= movie.title
+        .movie-cast= movie.formatted_cast
+
+extends _layout
+
+block content
+  .content
+    .selected-movie
+    ul.movie-list
+      each movie in movies
+        +MovieListItem(movie)
+    .alert.offline
+  .overlay
+    .overlay-content
+      .popup

@@ -28,25 +28,31 @@ app.configure(function(){
 });
 
 // Controllers
-var controllers = require('./controllers');
+var endpoint_controller  = require('./controllers/endpoint');
+var movielist_controller = require('./controllers/movie-list');
+var movie_controller     = require('./controllers/movie');
 
 // Routes
-app.get('/', function(req, res){
-  res.render('index');
-});
+app.get('/', movielist_controller.home);
+app.get('/in-theatres', movielist_controller.in_theatres);
+app.get('/box-office', movielist_controller.box_office);
+app.get('/new-releases', movielist_controller.new_releases);
+app.get('/top-rentals', movielist_controller.top_rentals);
 
-app.get('/api/category/in-theatres', controllers.in_theatres);
-app.get('/api/category/box-office', controllers.box_office);
-app.get('/api/category/new-releases', controllers.new_releases);
-app.get('/api/category/top-rentals', controllers.top_rentals);
-app.get('/api/movie/:id', controllers.movie);
+app.get('/movie/:id', movie_controller.index);
+
+
+
+app.get('/api/category/in-theatres', endpoint_controller.in_theatres);
+app.get('/api/category/box-office', endpoint_controller.box_office);
+app.get('/api/category/new-releases', endpoint_controller.new_releases);
+app.get('/api/category/top-rentals', endpoint_controller.top_rentals);
+app.get('/api/movie/:id', endpoint_controller.movie);
 app.get('/api/user/online', function(req, res, next){
   res.json({online: true});
 });
 
-app.get('*', function(req, res){
-  res.render('index');
-});
+// app.get('*', movielist_controller.home);
 
 var port = nconf.get('PORT') || 8888;
 app.listen(port);

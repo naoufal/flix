@@ -1,0 +1,37 @@
+- var page_title = movie.title
+
+extends _layout
+
+block content
+  .content
+    .selected-movie.is-visible
+      .selected-movie__header
+        .title= movie.title
+        a.btn.menu.left(href='/')
+          .line_one
+          .line_two
+          .line_three
+        .img.is-visible(style='background-image: url(' + movie.banner_url + ')')
+          img
+      aside.selected-movie__sidebar
+        .movie-poster
+          img(src= movie.poster_url)
+          .inset-shadow
+        //- .btn.btn-flat.primary Watch Trailer
+      .selected-movie__content
+        .fieldset.starring
+          .fieldset__label Starring
+          .fieldset__value= movie.formatted_cast
+        .fieldset.synopsis
+          .fieldset__label Synopsis
+          .fieldset__value= movie.synopsis
+        .fieldset.release-date
+          .fieldset__label Release Date
+          .fieldset__value= movie.formatted_date
+        .fieldset.runtime
+          .fieldset__label Runtime
+          .fieldset__value= movie.formatted_runtime
+    .alert.offline
+  .overlay
+    .overlay-content
+      .popup
