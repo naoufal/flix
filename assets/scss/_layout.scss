@@ -85,11 +85,8 @@ header#header {
   position: relative;
   overflow: hidden;
 
-  @media #{$medium-up} {
-    // padding-left: 27px;
-  }
   @media #{$large-up} {
-    padding-left: $sidebar-width;
+    margin-left: $sidebar-width;
   }
 }
 
