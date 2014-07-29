@@ -43,9 +43,11 @@ module.exports.MovieItem = Backbone.View.extend({
     var template = require("../templates/movie-list-item.hbs");
 
     // format data
-    var formatted_cast = _.map(this.model.get('cast'), function(actor){
-      return actor.name;
-    }).toString().replace(/,/g, ', ')
+    var formatted_cast = _.chain(this.model.get('cast'))
+      .pluck('name')
+      .first(3)
+      .value()
+      .toString().replace(/,/g, ', ');
 
     // append data to template
     $(this.el)
@@ -216,9 +218,11 @@ module.exports.SelectedMovie = Backbone.View.extend({
     var runtime = moment.duration(this.model.get('runtime'), 'minutes');
     var formatted_runtime = runtime.hours() + 'h ' + runtime.minutes() + 'm';
     var formatted_date = moment(this.model.get('release_date')).format('MMMM D, YYYY');
-    var formatted_cast = _.map(this.model.get('cast'), function(actor){
-      return actor.name;
-    }).toString().replace(/,/g, ', ');
+    var formatted_cast = _.chain(this.model.get('cast'))
+      .pluck('name')
+      .first(3)
+      .value()
+      .toString().replace(/,/g, ', ');
 
     // append data to template
     $(this.el).append(template({

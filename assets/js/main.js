@@ -32,12 +32,12 @@ Flix = new function(){
   }
 
   this.initLayout = function() {
-    var movie_categories = new Collection.Categories(CATEGORIES);
-    var category_list = new View.CategoryList({
-      collection: movie_categories
-    });
-    var header = new View.Header();
-    initialRoute(category_list);
+    // var movie_categories = new Collection.Categories(CATEGORIES);
+    // var category_list = new View.CategoryList({
+    //   collection: movie_categories
+    // });
+    // var header = new View.Header();
+    // initialRoute(category_list);
   }
 
   this.initHistory = function() {
@@ -70,10 +70,4 @@ Flix = new function(){
   };
 
   // Private Functions
-  var initialRoute = function(category_list) {
-    var initial_route = window.location.pathname.replace('/', '');
-    var initial_category = _.where(CATEGORIES, {name: initial_route})[0] || CATEGORIES[0];
-
-    category_list.getMovies(initial_category.name, initial_category.title);
-  }
 }

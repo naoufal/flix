@@ -5,16 +5,11 @@
   height: 100%;
   background: white;
   z-index: 100;
-  @include transform(translate3d(1000px, 0, 0));
+  @include transform(translate3d(1800px, 0, 0));
   @include transition(all 1s cubic-bezier(0.19, 1, 0.22, 1));
-
   &.is-visible {
     @include transform(translate3d(0, 0, 0));
   }
-  @media #{$medium-up} {
-    // display: none;
-  }
-
 
   $small-banner-height: 180px;
   $medium-banner-height: 240px;
@@ -570,3 +565,8 @@
   text-transform: uppercase;
 }
 
+
+// ---------- !ANIMATION HELPER ---------- \\
+.animate {
+
+}
