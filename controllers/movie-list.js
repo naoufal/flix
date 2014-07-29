@@ -34,7 +34,7 @@ exports.home = function(req, res){
       if (err) return err;
 
       res.render('movie-list', {
-        page_title: 'In Theatres',
+        category: 'In Theatres',
         movies: movies
       });
     }
@@ -68,7 +68,7 @@ exports.in_theatres = function(req, res){
       if (err) return err;
 
       res.render('movie-list', {
-        page_title: 'In Theatres',
+        category: 'In Theatres',
         movies: movies
       });
     }
@@ -102,7 +102,7 @@ exports.box_office = function(req, res){
       if (err) return err;
 
       res.render('movie-list', {
-        page_title: 'Box Office',
+        category: 'Box Office',
         movies: movies
       });
     }
@@ -136,7 +136,7 @@ exports.new_releases = function(req, res){
       if (err) return err;
 
       res.render('movie-list', {
-        page_title: 'New Releases',
+        category: 'New Releases',
         movies: movies
       });
     }
@@ -170,7 +170,7 @@ exports.top_rentals = function(req, res){
       if (err) return err;
 
       res.render('movie-list', {
-        page_title: 'Top Rentals',
+        category: 'Top Rentals',
         movies: movies
       });
     }
