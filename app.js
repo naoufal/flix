@@ -20,10 +20,6 @@ app.use(function(req, res, next){
 });
 app.use('/', express.static(__dirname + '/public/'));
 app.set('view engine', 'jade');
-app.use(express.json());
-app.use(express.urlencoded());
-app.use(express.cookieParser()); // parse cookies
-app.use(app.router);
 
 // Routes
 require('./routes')(app);
