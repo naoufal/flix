@@ -1,7 +1,8 @@
 // libraries
-var express = require('express');
-var app     = express();
-var nconf   = require('nconf');
+var express  = require('express');
+var app      = express();
+var compress = require('compression');
+var nconf    = require('nconf');
 
 // Run initializers
 require('./lib/init-all');
@@ -11,6 +12,7 @@ app.locals.config = {};
 app.locals.config.NODE_ENV = nconf.get('NODE_ENV');
 
 // Middleware
+app.use(compress());
 app.use(function(req, res, next){
   res.locals.url = 'http://' + req.headers.host;
   if (nconf.get('NODE_ENV') == 'development') {
