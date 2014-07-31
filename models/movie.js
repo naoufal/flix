@@ -21,7 +21,10 @@ var schema = mongoose.Schema({
   poster_url: {type: String, default: null},
   banner_url: {type: String, default: null},
   cast: Array,
+  crew: Array,
   genres: Array,
+  tagline: {type: String, default: null},
+  popularity: {type: String, default: 0},
   videos: Array,
   reviews: Array,
   links: {
@@ -29,8 +32,8 @@ var schema = mongoose.Schema({
     videos: {type: String, default: null},
     credits: {type: String, default: null},
   },
-  created_at: Number,
-  updated_at: Number
+  created_ts: Number,
+  updated_ts: Number
 });
 
 module.exports = mongoose.model('Movie', schema);
