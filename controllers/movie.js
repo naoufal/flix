@@ -10,7 +10,7 @@ var getMovies = require('../lib/get-movies');
 
 exports.index = function(req, res){
   // imdb ids are prepended with tt
-  var movie_id = 'tt' + req.params.id;
+  var movie_id = req.params.id;
 
   Step(
     function getData(){
