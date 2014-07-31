@@ -5,7 +5,7 @@ mixin MovieListItem(movie)
   li.is-visible.is-loaded
     a.movie(href='/movie/' + movie.ids.imdb)
       .movie-poster
-        img(src=movie.poster)
+        img(src=movie.poster_url)
         .inset-shadow
       .movie-info
         .movie-title= movie.title
