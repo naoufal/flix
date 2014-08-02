@@ -126,6 +126,26 @@ module.exports = function (grunt) {
       }
     },
 
+    uglify: {
+      js: {
+        files : [{
+          expand: true,
+          cwd: 'public/js',
+          src:['**/*.js'],
+          dest: 'public/js'
+        }]
+      }
+    },
+
+    cssmin: {
+      minify: {
+        expand: true,
+        cwd: 'public/css',
+        src: '*.css',
+        dest: 'public/css'
+      }
+    },
+
     nodemon: {
       dev: {
         script: 'app.js',
@@ -162,7 +182,11 @@ module.exports = function (grunt) {
 
   // Task groups & aliases ///////////////////////////////////////
   grunt.registerTask('dev', ['build', 'concurrent']);
-  grunt.registerTask('build', ['modernizr', 'copy', 'jade', 'browserify', 'sass', 'eslint']);
+  grunt.registerTask('build', ENV == 'development' ? 'build-dev' : 'build-prod');
+  grunt.registerTask('build-prod', ['build-dev', 'minify']);
+  grunt.registerTask('build-dev', ['modernizr', 'copy', 'jade', 'browserify', 'sass', 'eslint']);
+
+  grunt.registerTask('minify', ['cssmin', 'uglify']);
   grunt.registerTask('test', ['exec:remove_screens', 'exec:mkdir_screens', 'exec:run_tests']);
   grunt.registerTask('test:screens', ['test', 'exec:open_screens']);
 }
