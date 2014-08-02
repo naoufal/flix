@@ -1,178 +1,98 @@
-var nconf   = require('nconf');
 var _       = require('lodash');
 var moment  = require('moment');
-var Step    = require('step');
-var redis   = require('../lib/init-redis');
-var debug   = require('debug')('cache');
+var async   = require('async');
 
 var getMovies = require('../lib/get-movies');
 
+var LIST_TITLE = {
+  in_theaters: 'In Theaters',
+  box_office: 'Box Office',
+  new_releases: 'New Releases',
+  top_rentals: 'Top Rentals'
+}
+
 
 exports.home = function(req, res){
-  Step(
-    function getData(){
-      var step = this;
-
-      getMovies.rt('in_theatres', function(err, movies) {
-        step(err, movies);
-      });
-    },
-    function formatData(err, movies){
-      // figure out what to do if we can't fetch errors.
-      if (err) console.log(err);
-      //format data
-      _.each(movies, function(movie) {
-        movie.formatted_cast = _.map(movie.cast, function(actor){
-          return actor.name;
-        }).toString().replace(/,/g, ', ')
-      })
-
-      this(err, movies)
-    },
-    function render(err, movies){
-      // figure out what to do if we can't fetch errors.
-      if (err) return err;
-
-      res.render('movie-list', {
-        category: 'In Theatres',
-        movies: movies
-      });
-    }
-  );
+  getMovieList('in_theaters', function(err, movies){
+    res.locals.list_title = LIST_TITLE['in_theaters'];
+    // if error render error page.
+    res.render('movie-list', {
+      movies: movies
+    });
+  });
 }
 
 exports.in_theatres = function(req, res){
-  Step(
-    function getData(){
-      var step = this;
-
-      getMovies.rt('in_theatres', function(err, movies) {
-        step(err, movies);
-      });
-    },
-    function formatData(err, movies){
-      // figure out what to do if we can't fetch errors.
-      if (err) console.log(err);
-
-      //format data
-      _.each(movies, function(movie) {
-        movie.formatted_cast = _.map(movie.cast, function(actor){
-          return actor.name;
-        }).toString().replace(/,/g, ', ')
-      })
-
-      this(err, movies)
-    },
-    function render(err, movies){
-      // figure out what to do if we can't fetch errors.
-      if (err) return err;
-
-      res.render('movie-list', {
-        category: 'In Theatres',
-        movies: movies
-      });
-    }
-  );
+  getMovieList('in_theaters', function(err, movies){
+    res.locals.list_title = LIST_TITLE['in_theaters'];
+    // if error render error page.
+    res.render('movie-list', {
+      movies: movies
+    });
+  });
 }
 
 exports.box_office = function(req, res){
-  Step(
-    function getData(){
-      var step = this;
-
-      getMovies.rt('box_office', function(err, movies) {
-        step(err, movies);
-      });
-    },
-    function formatData(err, movies){
-      // figure out what to do if we can't fetch errors.
-      if (err) console.log(err);
-
-      //format data
-      _.each(movies, function(movie) {
-        movie.formatted_cast = _.map(movie.cast, function(actor){
-          return actor.name;
-        }).toString().replace(/,/g, ', ')
-      })
-
-      this(err, movies)
-    },
-    function render(err, movies){
-      // figure out what to do if we can't fetch errors.
-      if (err) return err;
-
-      res.render('movie-list', {
-        category: 'Box Office',
-        movies: movies
-      });
-    }
-  );
+  getMovieList('box_office', function(err, movies){
+    res.locals.list_title = LIST_TITLE['box_office'];
+    // if error render error page.
+    res.render('movie-list', {
+      movies: movies
+    });
+  });
 }
 
 exports.new_releases = function(req, res){
-  Step(
-    function getData(){
-      var step = this;
-
-      getMovies.rt('new_releases', function(err, movies) {
-        step(err, movies);
-      });
-    },
-    function formatData(err, movies){
-      // figure out what to do if we can't fetch errors.
-      if (err) console.log(err);
-
-      //format data
-      _.each(movies, function(movie) {
-        movie.formatted_cast = _.map(movie.cast, function(actor){
-          return actor.name;
-        }).toString().replace(/,/g, ', ')
-      })
-
-      this(err, movies)
-    },
-    function render(err, movies){
-      // figure out what to do if we can't fetch errors.
-      if (err) return err;
-
-      res.render('movie-list', {
-        category: 'New Releases',
-        movies: movies
-      });
-    }
-  );
+  getMovieList('new_releases', function(err, movies){
+    res.locals.list_title = LIST_TITLE['new_releases'];
+    // if error render error page.
+    res.render('movie-list', {
+      movies: movies
+    });
+  });
 }
 
 exports.top_rentals = function(req, res){
-  Step(
-    function getData(){
-      var step = this;
+  getMovieList('top_rentals', function(err, movies){
+    res.locals.list_title = LIST_TITLE['top_rentals'];
+    // if error render error page.
+    res.render('movie-list', {
+      movies: movies
+    });
+  });
+}
 
-      getMovies.rt('top_rentals', function(err, movies) {
-        step(err, movies);
+
+
+var getMovieList = function(list_slug, cb){
+  async.waterfall([
+    function getData(next){
+      getMovies.movieList(list_slug, function(err, movies) {
+        if (err) return next(err);
+        next(null, movies);
       });
     },
-    function formatData(err, movies){
-      // figure out what to do if we can't fetch errors.
-      if (err) console.log(err);
+    function formatData(movies, next){
+      async.map(movies, function(movie, next_movie){
+        var runtime = moment.duration(movie.runtime, 'minutes');
 
-      //format data
-      _.each(movies, function(movie) {
-        movie.formatted_cast = _.map(movie.cast, function(actor){
-          return actor.name;
-        }).toString().replace(/,/g, ', ')
-      })
+        movie.formatted_cast = _.chain(movie.cast)
+          .first(3)
+          .pluck('name')
+          .value()
+          .toString().replace(/,/g, ', ');
 
-      this(err, movies)
-    },
-    function render(err, movies){
-      // figure out what to do if we can't fetch errors.
-      if (err) return err;
+        movie.formatted_runtime = runtime.hours() + 'h ' + runtime.minutes() + 'm';
+        movie.formatted_date = moment(movie.release_date).format('MMMM D, YYYY');
 
-      res.render('movie-list', {
-        category: 'Top Rentals',
-        movies: movies
+        next_movie(null, movie);
+      }, function afterAll(err, movies) {
+        next(null, movies);
       });
     }
-  );
-}
+  ], function finish(err, movies){
+    if (err) return cb(new VError(err, 'Could not fetch movie list'));
+
+    cb(null, movies)
+  });
+};
