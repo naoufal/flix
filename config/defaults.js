@@ -8,5 +8,24 @@ module.exports = {
   MONGO_URL: process.env.MONGOHQ_URL || 'mongodb://localhost/flix',
 
   THEMOVIEDB_KEY: 'OVERWRITE WITH LOCAL FILE',
-  ROTTENTOMATOES_KEY: 'OVERWRITE WITH LOCAL FILE'
+  ROTTENTOMATOES_KEY: 'OVERWRITE WITH LOCAL FILE',
+
+  LISTS: [
+    {
+      slug: 'in_theaters',
+      title: 'In Theaters'
+    },
+    {
+      slug: 'box_office',
+      title: 'Box Office'
+    },
+    {
+      slug: 'new_releases',
+      title: 'New Releases'
+    },
+    {
+      slug: 'top_rentals',
+      title: 'Top Rentals'
+    },
+  ]
 };

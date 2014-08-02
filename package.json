@@ -21,6 +21,7 @@
     "browserify": "^4.2.0",
     "browserify-shim": "^3.6.0",
     "compression": "^1.0.9",
+    "cron": "~1.0.3",
     "debug": "^1.0.2",
     "es5-shim": "^3.4.0",
     "express": "^4.0.0",

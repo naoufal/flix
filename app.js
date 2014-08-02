@@ -32,4 +32,5 @@ console.log('Running on port ' + port);
 
 module.exports.app = app;
 
+require('./lib/poll-lists');
 // require('./test');
