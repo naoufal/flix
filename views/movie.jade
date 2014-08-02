@@ -19,7 +19,8 @@ block content
         .movie-poster
           img(src= movie.poster_url)
           .inset-shadow
-        //- .btn.btn-flat.primary Watch Trailer
+        if (movie.has_video)
+          a.btn.btn-flat.primary(href='') Watch Trailer
       .selected-movie__content
         .fieldset.starring
           .fieldset__label Starring
