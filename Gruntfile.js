@@ -89,8 +89,8 @@ module.exports = function (grunt) {
     sass: {
       dev: {
         options: {
-          outputStyle: ENV == 'production' ? 'compressed' : 'nested',
-          noLineComments: ENV == 'production' ? true : false,
+          outputStyle: ENV != 'development' ? 'nested' : 'compressed',
+          noLineComments: ENV == 'development' ? false : true,
           httpPath: '/',
           environment: ENV || 'development'
         },
