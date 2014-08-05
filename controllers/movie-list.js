@@ -1,7 +1,7 @@
-var _       = require('lodash');
-var moment  = require('moment');
-var async   = require('async');
-
+var _         = require('lodash');
+var moment    = require('moment');
+var async     = require('async');
+var VError    = require('verror');
 var getMovies = require('../lib/get-movies');
 
 var LIST_TITLE = {
