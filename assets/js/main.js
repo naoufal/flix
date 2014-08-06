@@ -34,7 +34,7 @@ Flix = new function(){
   this.init = function(){
     self.initLayout();
     self.initHistory();
-    self.isUserOnline();
+    // self.isUserOnline();
   }
 
   this.initLayout = function() {
