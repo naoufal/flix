@@ -19,8 +19,8 @@ block content
         .movie-poster
           img(src= movie.poster_url)
           .inset-shadow
-        if (movie.has_video)
-          a.btn.btn-flat.primary(href='') Watch Trailer
+        if (movie.video)
+          a.btn.btn-flat.primary(href=movie.video.url, target='_blank')= 'Watch ' + movie.video.type
       .selected-movie__content
         .fieldset.starring
           .fieldset__label Starring

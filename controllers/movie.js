@@ -3,7 +3,7 @@ var moment  = require('moment');
 var async   = require('async');
 
 var getMovies = require('../lib/get-movies');
-
+var formatVideo = require('../lib/format-video');
 
 exports.index = function(req, res){
   // imdb ids are prepended with tt
@@ -28,13 +28,12 @@ exports.index = function(req, res){
       movie.formatted_runtime = runtime.hours() + 'h ' + runtime.minutes() + 'm';
       movie.formatted_date = moment(movie.release_date).format('MMMM D, YYYY');
 
+      // if movie has videos format them
+      if (movie.videos.length > 0) {
+        var latest_video = _.first(movie.videos);
+        movie.video = formatVideo.index(latest_video);
+      }
 
-      /*
-        TODO: format videos into URLs with type
-      */
-      // if (movie.videos.length > 0) {
-      //   movie.has_video = true;
-      // }
       next(null, movie);
     }
   ], function finish(err, movie){
