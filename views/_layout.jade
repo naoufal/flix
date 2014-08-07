@@ -2,6 +2,7 @@ block variables
   - var page_title = ''
   - var page_description = ''
   - var page_keywords = ''
+  //- - var open_menu = false
 
 doctype html
 //if lt IE 7
@@ -30,7 +31,7 @@ html(class='no-js', lang='en')
 body
   block header
     header#header
-      .btn.menu.left
+      a.btn.menu.left(href=path + '?menu=open')
         .line_one
         .line_two
         .line_three
@@ -39,7 +40,7 @@ body
       h2.title= page_title
   block content
   block sidebar
-    aside.sidebar
+    aside.sidebar(class=open_menu ? 'is-visible' : '')
       header
         .title Flix
       ul.category-list

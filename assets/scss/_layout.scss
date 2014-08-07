@@ -157,6 +157,11 @@ aside.sidebar {
     display: inline-block;
     @include bgfade(#000, 0.5);
     z-index: 99;
+
+    @media #{$large-up} {
+      background: none;
+      z-index: -1;
+    }
   }
   .overlay-content {
     position: relative;

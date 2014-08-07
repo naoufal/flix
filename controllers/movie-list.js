@@ -13,6 +13,8 @@ var LIST_TITLE = {
 
 
 exports.home = function(req, res){
+  if (req.query.menu == 'open') res.locals.open_menu = true;
+
   getMovieList('in_theaters', function(err, movies){
     res.locals.list_title = LIST_TITLE['in_theaters'];
     // if error render error page.
@@ -23,6 +25,8 @@ exports.home = function(req, res){
 }
 
 exports.in_theatres = function(req, res){
+  if (req.query.menu == 'open') res.locals.open_menu = true;
+
   getMovieList('in_theaters', function(err, movies){
     res.locals.list_title = LIST_TITLE['in_theaters'];
     // if error render error page.
@@ -33,6 +37,8 @@ exports.in_theatres = function(req, res){
 }
 
 exports.box_office = function(req, res){
+  if (req.query.menu == 'open') res.locals.open_menu = true;
+
   getMovieList('box_office', function(err, movies){
     res.locals.list_title = LIST_TITLE['box_office'];
     // if error render error page.
@@ -43,6 +49,8 @@ exports.box_office = function(req, res){
 }
 
 exports.new_releases = function(req, res){
+  if (req.query.menu == 'open') res.locals.open_menu = true;
+
   getMovieList('new_releases', function(err, movies){
     res.locals.list_title = LIST_TITLE['new_releases'];
     // if error render error page.
@@ -53,6 +61,8 @@ exports.new_releases = function(req, res){
 }
 
 exports.top_rentals = function(req, res){
+  if (req.query.menu == 'open') res.locals.open_menu = true;
+
   getMovieList('top_rentals', function(err, movies){
     res.locals.list_title = LIST_TITLE['top_rentals'];
     // if error render error page.

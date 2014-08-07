@@ -20,6 +20,6 @@ block content
       each movie in movies
         +MovieListItem(movie)
     .alert.offline
-  .overlay
+  .overlay(class=open_menu ? 'is-visible' : '')
     .overlay-content
       .popup

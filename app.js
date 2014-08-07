@@ -14,6 +14,7 @@ app.locals.config.NODE_ENV = nconf.get('NODE_ENV');
 // Middleware
 app.use(compress());
 app.use(function(req, res, next){
+  res.locals.path = req._parsedUrl.pathname;
   res.locals.url = 'http://' + req.headers.host;
   if (nconf.get('NODE_ENV') == 'development') {
     res.setHeader('Access-Control-Allow-Origin', '*');
