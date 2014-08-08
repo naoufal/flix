@@ -24,10 +24,10 @@ html(class='no-js', lang='en')
       meta(name='robots', content='noindex, nofollow')
     meta(name='description', content=page_description)
     meta(name='keywords', content=page_keywords)
-    link(rel='stylesheet', href='/css/style.css')
+    link(rel='stylesheet', href=hashUrl('/css/style.css'))
     if config.NODE_ENV == 'development'
       script( type='text/javascript', src='http://localhost:35729/livereload.js')
-    script(src='/js/bundle.js')
+    script(src=hashUrl('/js/bundle.js'))
 body
   block header
     header#header
