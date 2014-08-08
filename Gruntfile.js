@@ -178,6 +178,39 @@ module.exports = function (grunt) {
       target: ['assets/js/**/*.js']
     },
 
+    // Renames files based on a hash of their contents and saves a hashmap
+    hashmap: {
+      options: {
+        output: 'assets/hashmap.json',
+        rename: '#{= dirname}/#{= hash}.#{= basename}#{= extname}',
+        keep: true,
+        hashlen: 7,
+        salt: 'pubweb-1'  // increment # to invalidate all hashes
+      },
+      all: {
+        cwd: 'public',
+        src: '**/*',
+        dest: 'public-hashed'
+      }
+    },
+
+    // fix urls in css files to use the hashmap urls
+    cssurlrev: {
+      options: {
+        assets: '<%= hashmap.options.output %>',
+        hashmap_rename: '<%= hashmap.options.rename %>'
+      },
+      all: {
+        src: 'public-hashed/css/**/*.css'
+      }
+    },
+
+    // clean
+    clean: {
+      build: ['public', 'public-hashed', 'assets/hashmap.json'],
+    },
+
+
     exec: {
       mkdir_screens: 'mkdir ./test/screenshots',
       remove_screens: 'rm -rf ./test/screenshots',
@@ -190,8 +223,8 @@ module.exports = function (grunt) {
   // Task groups & aliases ///////////////////////////////////////
   grunt.registerTask('dev', ['build', 'concurrent']);
   grunt.registerTask('build', ENV == 'development' ? 'build-dev' : 'build-prod');
-  grunt.registerTask('build-prod', ['build-dev', 'minify']);
-  grunt.registerTask('build-dev', ['modernizr', 'copy', 'jade', 'browserify', 'sass', 'eslint']);
+  grunt.registerTask('build-prod', ['build-dev', 'minify', 'cssurlrev']);
+  grunt.registerTask('build-dev', ['clean:build', 'modernizr', 'copy', 'jade', 'browserify', 'sass', 'hashmap', 'eslint']);
 
   grunt.registerTask('minify', ['cssmin', 'uglify']);
   grunt.registerTask('test', ['exec:remove_screens', 'exec:mkdir_screens', 'exec:run_tests']);
