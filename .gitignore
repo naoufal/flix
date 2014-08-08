@@ -3,7 +3,9 @@
 
 test.js
 phantomjsdriver.log
+newrelic_agent.log
 npm-debug.log
+
 
 config/local.js
 assets/hashmap.json
