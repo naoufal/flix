@@ -6,10 +6,12 @@ phantomjsdriver.log
 npm-debug.log
 
 config/local.js
+assets/hashmap.json
 assets/templates/
 assets/lib-bower/
 assets/lib/modernizr/modernizr-auto.js
 node_modules/
 public/
+public-hashed/
 temp/
 test/screenshots/
