@@ -31,7 +31,7 @@ html(class='no-js', lang='en')
 body
   block header
     header#header
-      a.btn.menu.left(href=path + '?menu=open')
+      a.btn.menu.left(href=path + '?menu=open', onclick='_gaq.push(["_trackEvent", "Button", "Click", "Header Menu"])')
         .line_one
         .line_two
         .line_three
@@ -45,9 +45,9 @@ body
         .title Flix
       ul.category-list
         li
-          a.category(href='/in-theatres') In Theatres
-          a.category(href='/box-office') Box Office
-          a.category(href='/new-releases') New Releases
-          a.category(href='/top-rentals') Top Rentals
+          a.category(href='/in-theatres', onclick='_gaq.push(["_trackEvent", "Categories", "Filter", "In Theaters"])') In Theaters
+          a.category(href='/box-office', onclick='_gaq.push(["_trackEvent", "Categories", "Filter", "Box Office"])') Box Office
+          a.category(href='/new-releases', onclick='_gaq.push(["_trackEvent", "Categories", "Filter", "New Releases"])') New Releases
+          a.category(href='/top-rentals', onclick='_gaq.push(["_trackEvent", "Categories", "Filter", "Top Rentals"])')  Top Rentals
   block scripts
     include _includes/analytics

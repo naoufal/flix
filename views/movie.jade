@@ -20,7 +20,7 @@ block content
           img(src= movie.poster_url)
           .inset-shadow
         if (movie.video)
-          a.btn.btn-flat.primary(href=movie.video.url, target='_blank')= 'Watch ' + movie.video.type
+          a.btn.btn-flat.primary(href=movie.video.url, target='_blank', onclick='_gaq.push(["_trackEvent", "Video - ' + movie.video.type + '", "External Watch", "' + movie.ids.imdb + '"])')= 'Watch ' + movie.video.type
       .selected-movie__content
         .fieldset.starring
           .fieldset__label Starring
