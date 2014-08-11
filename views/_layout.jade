@@ -20,7 +20,7 @@ html(class='no-js', lang='en')
     meta(charset='utf-8')
     meta(name='viewport', content='width=device-width, initial-scale=1, user-scalable=no')
     title= page_title + ' - Flix'
-    if config.NODE_ENV != 'development'
+    if config.NODE_ENV != 'production'
       meta(name='robots', content='noindex, nofollow')
     meta(name='description', content=page_description)
     meta(name='keywords', content=page_keywords)
