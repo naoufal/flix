@@ -222,7 +222,7 @@ module.exports = function (grunt) {
 
   // Task groups & aliases ///////////////////////////////////////
   grunt.registerTask('dev', ['build', 'concurrent']);
-  grunt.registerTask('build', ENV == 'development' ? 'build-dev' : 'build-prod');
+  grunt.registerTask('build', ENV != 'development' ? 'build-dev' : 'build-prod');
   grunt.registerTask('build-prod', ['build-dev', 'minify', 'cssurlrev']);
   grunt.registerTask('build-dev', ['clean:build', 'modernizr', 'copy', 'jade', 'browserify', 'sass', 'hashmap', 'eslint']);
 
